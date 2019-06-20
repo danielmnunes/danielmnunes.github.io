@@ -126,13 +126,13 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/danielmnunes"
+      url: "https://github.com/danielmnunes"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://www.instagram.com/daniel.mn/"
+      url: "https://www.instagram.com/daniel.mn/"
     - label: "LinkedIn"
       icon: "fab fa-linkedin-in"
-      # url: "https://www.linkedin.com/in/daniel-nunes-782b1114b/"
+      url: "https://www.linkedin.com/in/daniel-nunes-782b1114b/"
 
 # Site Footer
 footer:
