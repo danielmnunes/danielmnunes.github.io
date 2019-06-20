@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Sobre"
-    url: /sobre/
+    url: /about/
   - title: "Pandas"
     url: /pandas/
   # - title: "About"
