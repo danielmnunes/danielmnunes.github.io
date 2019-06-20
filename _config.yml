@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "pt-BR"
 title                    : "Daniel Nunes"
 title_separator          : "-"
 name                     : "Daniel Nunes"
@@ -109,7 +109,7 @@ author:
   name             : "Daniel Nunes"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
-  location         : "Somewhere"
+  location         : "Fortaleza, CE"
   email            :
   links:
     - label: "Email"
