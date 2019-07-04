@@ -3,4 +3,4 @@ title: "Sobre"
 permalink: /about/
 ---
 
-Sobre...
+Sobre... :sunglasses:
