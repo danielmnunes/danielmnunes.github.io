@@ -1,5 +1,5 @@
 ---
-title: "Instalando o Python"
+title: "Instalando Python"
 date: 2019-08-21
 tags: [Python, Data Science]
 excerpt: "Python, Data Science"
