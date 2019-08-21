@@ -3,4 +3,4 @@ title: "Sobre"
 permalink: /about/
 ---
 
-Sobre... :sunglasses:
+Graduando em Matemática Industrial e Cientista de Dados nas horas vagas. :sunglasses:
