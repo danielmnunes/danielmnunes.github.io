@@ -1,8 +1,7 @@
 ---
-title: "Uma introdução a simulação de números aleatórios"
-date: 2019-06-20
-tags: [Estatística, Data Science]
-excerpt: "Estatística, Data Science"
+title: "Instalando o Python"
+date: 2019-08-21
+tags: [Python, Data Science]
+excerpt: "Python, Data Science"
 ---
-{% include figure image_path="https://media.giphy.com/media/l378BxUPxO5cAAibK/giphy.gif"%}
-# Uma introdução a simulação de números aleatórios
+![image-center]({{ site.url }}{{ site.baseurl }}/images/python.png){: .align-center}
