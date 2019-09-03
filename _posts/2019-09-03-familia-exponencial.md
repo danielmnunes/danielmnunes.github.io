@@ -25,15 +25,15 @@ $$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
 
  $$ f(x; \theta) =  exp^{\: x \, log\left ( \frac{ \theta}{1- \theta} \right ) \,  +\,  log(1 - \theta)} $$
 
- Lembrando que $$ x $$ $$ pertence ao conjunto \left \{ 0, 1  \right \} $$.
+ Lembrando que $$ x $$ pertence ao conjunto $$ \left \{ 0, 1  \right \} $$.
 
- Chegamos no resultado prentendido, rescrevemos a função de probablidiade da distribuição Bernoulli na forma da família exponencial:
+ Chegamos ao resultado prentendido, rescrevemos a função de probablidiade da distribuição Bernoulli na forma da família exponencial:
 
- c( $$ \theta $$ ) = $$ log\left ( \frac{ \theta}{1- \theta} \right ) $$
+$$ c(  \theta ) =  log\left ( \frac{ \theta}{1- \theta} \right ) $$
 
- T($$ x $$) = $$ x $$
+$$ T(x) =  x $$
  
- d($$ \theta $$) = $$ log(1 - \theta) $$
+$$ d( \theta ) =  log(1 - \theta) $$
  
- S($$ x $$) = 0
+$$ S($$ x ) = 0 $$
 
