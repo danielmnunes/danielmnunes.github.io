@@ -12,3 +12,28 @@ Uma família de fdps ou fps é chamada exponencial, se puder ser expressa como:
 $$ f(x; \theta ) = exp^{\left \{  c(\theta) T(x) + d(\theta) + S(x)\right \}} \:\:  com \: \: \:  x \in A $$
 
 Onde $$ c $$ e $$ d $$ são funções reais de $$ \theta $$ (que não dependem de $$ x $$) e $$ T $$, $$ S $$ são funções de $$ x $$ (Elas não dependem de $$ \theta $$).
+
+Vamos com um exemplo bem simples, seja $$ X $$ uma variável aleatória com distribuição de Bernoulli($$ \theta $$), com função de probabilidade:
+
+$$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
+
+ Então, podemos reescreve-la como:
+
+ $$ f(x; \theta) = \left ( \frac{ \theta}{1- \theta} \right )^{x}(1- \theta) $$
+
+ Aplicando as funções exponencial e logaritmo(Inversas entre si) ficamos com:
+
+ $$ f(x; \theta) =  exp^{\: x \, log\left ( \frac{ \theta}{1- \theta} \right ) \,  +\,  log(1 - \theta)} $$
+
+ Lembrando que $$ x $$ $$ pertence ao conjunto \left \{ 0, 1  \right \} $$.
+
+ Chegamos no resultado prentendido, rescrevemos a função de probablidiade da distribuição Bernoulli na forma da família exponencial:
+
+ c( $$ \theta $$ ) = $$ log\left ( \frac{ \theta}{1- \theta} \right ) $$
+
+ T($$ x $$) = $$ x $$
+ 
+ d($$ \theta $$) = $$ log(1 - \theta) $$
+ 
+ S($$ x $$) = 0
+
