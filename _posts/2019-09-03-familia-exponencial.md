@@ -29,8 +29,8 @@ $$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
 
  Chegamos ao resultado prentendido, rescrevemos a função de probablidiade da distribuição Bernoulli na forma da família exponencial:
 
-$$ c(  \theta ) =  log\left ( \frac{ \theta}{1- \theta} \right ) $$
-$$ T(x) =  x $$
-$$ d( \theta ) =  log(1 - \theta) $$
-$$ S( x ) = 0 $$
+$$ c(  \theta ) =  log\left ( \frac{ \theta}{1- \theta} \right ) ; $$
+$$ T(x) =  x ; $$
+$$ d( \theta ) =  log(1 - \theta) ; $$
+$$ S( x ) = 0 ; $$
 
