@@ -35,7 +35,7 @@ $$ d( \theta ) =  log(1 - \theta) ; $$
 $$ S( x ) = 0  $$
 
 
-Vamos agora ver mais um exemplo, seja $$ X $$ uma variável aleatória com distribuição de Normal($$ \mu ; \sigma^{2} $$), onde $$ \mu $$ é média da distribuição e $$ \sigma^{2} $$ a Variância. A função densidade de probabilidade é:
+Vamos agora ver mais um exemplo com dois parâmetros, assim precisamos de duas funções T e duas c. Seja $$ X $$ uma variável aleatória com distribuição de Normal($$ \mu ; \sigma^{2} $$), onde $$ \mu $$ é média da distribuição e $$ \sigma^{2} $$ a Variância. A função densidade de probabilidade é:
 
 $$ f(x; \theta) = \frac{1}{\sqrt[]{2\pi} \sigma }exp^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}} $$
 
