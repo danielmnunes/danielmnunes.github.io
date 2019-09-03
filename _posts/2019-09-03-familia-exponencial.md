@@ -1,5 +1,5 @@
 ---
-title: "Família Exponecial"
+title: "Família Exponencial"
 date: 2019-09-03
 tags: [Estatística, Inferência]
 excerpt: "Estatística, Inferência"
