@@ -43,6 +43,19 @@ Aplicando a exponencial e logaritmo e fazendo um pequeno algebrismo chegamos em:
 
 $$ exp^{ \left \{  -ln( \sqrt{2 \pi}) - ln( \sigma) - \frac{x^{2}}{2 \sigma^{2}} + \frac{ \mu x}{ \sigma^{2}} - \frac{ \mu}{2 \sigma^{2}} \right \} } $$
 
+E chegamos que é possivel reescrever a normal na forma da família exponencial, com as seguintes funções:
+
+$$ c_{1}(  \mu ) =   ; $$
+$$ c_{2}(  \sigma ) =   ; $$
+
+
+$$ T_{1}(x) =  x ; $$
+$$ T_{2}(x) =  x^{2} ; $$
+
+
+$$ d( \theta ) =   ; $$
+$$ S( x ) =   $$
+
 
 
 
