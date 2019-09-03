@@ -32,5 +32,5 @@ $$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
 $$ c(  \theta ) =  log\left ( \frac{ \theta}{1- \theta} \right ) ; $$
 $$ T(x) =  x ; $$
 $$ d( \theta ) =  log(1 - \theta) ; $$
-$$ S( x ) = 0 ; $$
+$$ S( x ) = 0  $$
 
