@@ -37,7 +37,7 @@ $$ S( x ) = 0  $$
 
 Vamos agora ver mais um exemplo, seja $$ X $$ uma variável aleatória com distribuição de Normal($$ \mu ; \sigma^{2} $$), onde $$ \mu $$ é média da distribuição e $$ \sigma^{2} $$ a Variância. A função densidade de probabilidade é:
 
-$$ f(x; \theta) = \frac{1}{\sqrt[]{2\pi}}exp^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}} $$
+$$ f(x; \theta) = \frac{1}{\sqrt[]{2\pi} \sigma }exp^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}} $$
 
 Aplicando exponencial e logaritmo chegamos em:
 
