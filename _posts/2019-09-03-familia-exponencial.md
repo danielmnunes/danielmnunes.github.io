@@ -17,7 +17,7 @@ Vamos com um exemplo bem simples, seja $$ X $$ uma variável aleatória com dist
 
 $$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
 
- Então, podemos reescreve-la como:
+ Então, podemos reescrevê-la  como:
 
  $$ f(x; \theta) = \left ( \frac{ \theta}{1- \theta} \right )^{x}(1- \theta) $$
 
@@ -27,7 +27,7 @@ $$ f(x; \theta) = \theta^{x}(1- \theta)^{1-x}  $$
 
  Lembrando que $$ x $$ pertence ao conjunto $$ \left \{ 0, 1  \right \} $$.
 
- Chegamos ao resultado prentendido, rescrevemos a função de probablidiade da distribuição Bernoulli na forma da família exponencial:
+ Chegamos ao resultado pretendido, reescrevemos a função de probabilidade da distribuição Bernoulli na forma da família exponencial:
 
 $$ c(  \theta ) =  log\left ( \frac{ \theta}{1- \theta} \right ) ; $$
 $$ T(x) =  x ; $$
