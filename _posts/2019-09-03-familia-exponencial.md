@@ -39,7 +39,7 @@ Vamos agora ver mais um exemplo com dois parâmetros, assim precisamos de duas f
 
 $$ f(x; \theta) = \frac{1}{\sqrt[]{2\pi} \sigma }exp^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}} $$
 
-Aplicando exponencial e logaritmo e fazendo um pequeno algebrismo chegamos em:
+Aplicando a exponencial e logaritmo e fazendo um pequeno algebrismo chegamos em:
 
 $$ exp^{ \left \{  -ln( \sqrt{2 \pi}) - ln( \sigma) - \frac{x^{2}}{2 \sigma^{2}} + \frac{ \mu x}{ \sigma^{2}} - \frac{ \mu}{2 \sigma^{2}} \right \} } $$
 
