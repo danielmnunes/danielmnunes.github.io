@@ -11,4 +11,4 @@ Uma família de fdps ou fps é chamada exponencial, se puder ser expressa como:
 
 $$ f(x; \theta ) = exp^{\left \{  c(\theta) T(x) + d(\theta) + S(x)\right \}} \:\:  com \: \: \:  x \in A $$
 
-Onde $c$ e $d$ são funções reais de $\theta$ (que não dependem de $x$) e $T$, $S$ são funções de $x$ (Elas não dependem de $\theta$).
+Onde $ c $ e $ d $ são funções reais de $ \theta $ (que não dependem de $ x $) e $ T $, $ S $ são funções de $ x $ (Elas não dependem de $ \theta $).
