@@ -45,8 +45,8 @@ $$ exp^{ \left \{  -ln( \sqrt{2 \pi}) - ln( \sigma) - \frac{x^{2}}{2 \sigma^{2}}
 
 E chegamos que é possivel reescrever a normal na forma da família exponencial, com as seguintes funções:
 
-$$ c_{1}(  \mu ) =   ; $$
-$$ c_{2}(  \sigma ) =   ; $$
+$$ c_{1}(  \mu ) =  \frac{ \mu}{ \sigma^{2}} ; $$
+$$ c_{2}(  \sigma ) =  \frac{1}{2 \sigma^{2}} ; $$
 
 
 $$ T_{1}(x) =  x ; $$
