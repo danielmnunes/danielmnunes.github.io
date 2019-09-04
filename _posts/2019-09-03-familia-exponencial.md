@@ -57,6 +57,9 @@ $$ d( \theta ) =  \frac{ \mu}{2 \sigma^{2}}  ; $$
 $$ S( x ) = -ln( \sqrt{2 \pi})  $$
 
 
+No próximo post falarei mais sobre família exponencial e também sobre estatística suficiente. Até a próxima!! 
+
+
 
 
 
