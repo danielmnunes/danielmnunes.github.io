@@ -5,4 +5,4 @@ tags: [Python, Data Science]
 excerpt: "Python, Data Science"
 ---
 
-[versões](/2019-08-21-instalando-python.md)
+[versões](https://danielmnunes.github.io/instalando-python/)
