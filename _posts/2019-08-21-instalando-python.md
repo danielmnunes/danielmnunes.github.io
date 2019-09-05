@@ -1,6 +1,7 @@
 ---
 title: "Instalando Python"
 date: 2019-08-21
+permalink: /posts/install-python/
 tags: [Python, Data Science]
 excerpt: "Python, Data Science"
 ---

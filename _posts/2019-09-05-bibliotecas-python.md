@@ -5,4 +5,6 @@ tags: [Python, Data Science]
 excerpt: "Python, Data Science"
 ---
 
-[versões](https://danielmnunes.github.io/instalando-python/)
+
+
+[**Configuration**]({{ "/posts/install-python/" | relative_url }})
