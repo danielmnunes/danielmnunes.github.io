@@ -33,5 +33,5 @@ Finalmente, você pode testar sua nova versão do Python, abra um prompt de coma
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/python2.jpeg){: .align-center}
 
 ## Conclusão
-Este post forneceu as informações necessárias para obter acesso a um interpretador do Python 3, agora você tem uma ferramenta poderosa, nos próximos te mostrarei como interagir com python, escrevendo seu primeiro programa python, até a próxima !!
+Este post forneceu as informações necessárias para obter acesso a um interpretador do Python 3, agora você tem uma ferramenta poderosa, no próximo post te mostrarei como interagir com python, escrevendo seu primeiro programa python, até a próxima !!
 
