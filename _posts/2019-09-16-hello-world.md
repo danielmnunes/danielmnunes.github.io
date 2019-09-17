@@ -11,7 +11,7 @@ No mundo do desenvolvimento um marco importante é o famoso Hello world, que ser
 
 Abra uma prompt de comando ou terminal, e digite *python* e aperte enter, deve aparecer algo parecido com isso: 
 
-![image-center]({{ site.url }}{{ site.baseurl }}/images/prompt1.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/images/prompt.png){: .align-center}
 
 Agora digite, *print(“Hello Wold !!”) e aperte enter. Voilà, eis que surge seu primeiro programa Python :clap: :clap: :clap:
 
