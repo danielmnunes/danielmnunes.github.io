@@ -3,6 +3,7 @@ title: "Hello World em Python"
 date: 2019-08-21
 permalink: /posts/hello/
 tags: [Python, Data Science]
+comments: true
 excerpt: "Python, Data Science"
 ---
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/python.png){: .align-center}
