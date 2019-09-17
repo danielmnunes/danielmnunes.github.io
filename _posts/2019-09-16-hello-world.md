@@ -13,6 +13,6 @@ Abra uma prompt de comando ou terminal, e digite *python* e aperte enter, deve a
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/prompt.png){: .align-center}
 
-Agora digite, *print(“Hello Wold !!”) e aperte enter. Voilà, eis que surge seu primeiro programa Python :clap: :clap: :clap:
+Agora digite, *print(“Hello Wold !!”)* e aperte enter. Voilà, eis que surge seu primeiro programa Python :clap: :clap: :clap:
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/hello.gif){: .align-center}
