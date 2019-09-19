@@ -1,7 +1,7 @@
 ---
-title: "As top 5 bibliotecas Python para Ciências de Dados"
+title: "Top 5 bibliotecas Python para Ciências de Dados"
 date: 2019-08-21
-permalink: /posts/top3-bibs-python/
+permalink: /posts/top5-bibs-python/
 tags: [Python, Data Science]
 comments: true
 excerpt: "Python, Data Science"
@@ -9,7 +9,7 @@ excerpt: "Python, Data Science"
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/python.png){: .align-center}
 
-Você conhece as bibliotecas que são uma mão na roda no mundo da ciência de dados?  Hoje vou ensinar você instalá-las e deixar sua máquina prontinha para os futuros trabalhos em [DS](http://www.cienciaedados.com/o-que-e-data-science/).
+Você conhece as bibliotecas que são uma mão na roda no mundo da ciência de dados?  Hoje vou ensinar você instalá-las e deixar sua máquina prontinha para os futuros trabalhos em [**DS**](http://www.cienciaedados.com/o-que-e-data-science/).
 
 
 [**Aqui**]({{ "/posts/install-python/" | relative_url }}) você já aprendeu a instalar o Python,  e [**aqui**]({{ "/posts/hello/" | relative_url }}) você aprendeu fazer o primeiro programada em Python, agora instalaremos as top 5 bibliotecas Python para Ciências de Dados
