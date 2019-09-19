@@ -31,3 +31,35 @@ Para instalá-la digite no prompt,
 ```sh
 pip install scipy
 ```
+
+[**Pandas**](https://pandas.pydata.org/) é uma biblioteca Python que fornece estruturas de dados de alto nível e uma vasta variedade de ferramentas para análise. A grande característica deste pacote é a capacidade de converter operações bastante complexas com dados em um ou dois comandos. O Pandas contém muitos métodos internos para agrupar, filtrar e combinar dados, é um substituto natural das planilhas excel, além das funcionalidades de séries temporais.
+
+Para instalá-la digite no prompt, 
+
+```sh
+pip install pandas
+```
+
+A biblioteca padrão de desenhos de gráficos em Python é [**Matplotlib**](https://matplotlib.org/), ela fornece funções para criação de diagramas e gráficos bidimensionais, com alguns comandos você pode criar diversos gráficos como: histogramas e gráficos de dispersão a gráficos de barras e pizza.
+
+Para instalá-la digite no prompt, 
+
+```sh
+pip install matplotlib
+```
+
+E para finalizar com chave de ouro a queridinha do mundo de aprendizado de máquina, [**scikit-learn**](https://scikit-learn.org/stable/), com mais de 14020 contribuidores e 24505 commits, scikit-learn é uma biblioteca que resolve uma porrada de problemas, Ela fornece algoritmos para muitas tarefas padrão de aprendizado de máquina e mineração de dados, como clustering, regressão, classificação, redução de dimensionalidade e seleção de modelos.
+
+
+Para instalá-la digite no prompt, 
+
+```sh
+pip install scikit-learn
+```
+
+Essa é a lista de biblioteca que recomendo para quem está iniciando, existe uma vasto acervo de tutorias sobre o uso de cada uma, mas as próprias documentação já estão de bom tamanho, vale uma visita nos sites oficiais.
+
+Você também pode instalar todas as biliotecas da lista através da distribuição Anaconda usando o seguinte [**link**](https://www.anaconda.com/distribution/)
+
+
+No próximos posts vou mostrar como usar com algumas funcionalidades das bibliotecas, até a próxima !!
