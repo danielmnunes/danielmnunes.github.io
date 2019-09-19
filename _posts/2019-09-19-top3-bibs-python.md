@@ -20,5 +20,4 @@ O caminho mais rápido e mais fácil de instalar a biblioteca NumPy em sua máqu
 
 ```sh
 pip install numpy
-
 ```
