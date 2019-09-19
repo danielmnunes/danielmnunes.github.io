@@ -22,7 +22,7 @@ O caminho mais rápido e mais fácil de instalar a biblioteca NumPy em sua máqu
 pip install numpy
 ```
 
-Isso instalará a versão mais recente e mais estável do NumPy em sua máquina. Instalar através do pip é a maneira mais simples de instalar qualquer pacote Python.
+Isso instalará a versão mais recente e mais estável do NumPy em sua máquina. Instalar através do [**pip**](https://pt.wikipedia.org/wiki/Pip_(gerenciador_de_pacotes)) é a maneira mais simples de instalar qualquer pacote Python.
 
 A próxima biblioteca também com aspecto de computação cientifica é o [**SciPy**](https://www.scipy.org/). É baseada em NumPy, portanto, amplia seus recursos. A estrutura principal de dados do SciPy é novamente uma matriz multidimensional, implementada pela Numpy. O pacote contém ferramentas que ajudam a resolver problemas de álgebra linear, teoria das probabilidades, cálculo integral e muitas outras tarefas.
 
@@ -32,7 +32,7 @@ Para instalá-la digite no prompt,
 pip install scipy
 ```
 
-[**Pandas**](https://pandas.pydata.org/) é uma biblioteca Python que fornece estruturas de dados de alto nível e uma vasta variedade de ferramentas para análise. A grande característica deste pacote é a capacidade de converter operações bastante complexas com dados em um ou dois comandos. O Pandas contém muitos métodos internos para agrupar, filtrar e combinar dados, é um substituto natural das planilhas excel, além das funcionalidades de séries temporais.
+[**Pandas**](https://pandas.pydata.org/) é uma biblioteca Python que fornece estruturas de dados de alto nível e uma vasta variedade de ferramentas para análise. A grande característica deste pacote é a capacidade de converter operações bastante complexas com dados em um ou dois comandos. Pandas contém muitos métodos internos para agrupar, filtrar e combinar dados, é um substituto natural das planilhas excel, além das funcionalidades de séries temporais.
 
 Para instalá-la digite no prompt, 
 
@@ -40,7 +40,7 @@ Para instalá-la digite no prompt,
 pip install pandas
 ```
 
-A biblioteca padrão de desenhos de gráficos em Python é [**Matplotlib**](https://matplotlib.org/), ela fornece funções para criação de diagramas e gráficos bidimensionais, com alguns comandos você pode criar diversos gráficos como: histogramas e gráficos de dispersão a gráficos de barras e pizza.
+A biblioteca padrão de desenhos de gráficos em Python é [**Matplotlib**](https://matplotlib.org/), ela fornece funções para criação de diagramas e gráficos bidimensionais, com alguns comandos você pode criar diversos gráficos como: histogramas, gráficos de dispersão, gráficos de barras e pizza.
 
 Para instalá-la digite no prompt, 
 
@@ -48,7 +48,7 @@ Para instalá-la digite no prompt,
 pip install matplotlib
 ```
 
-E para finalizar com chave de ouro a queridinha do mundo de aprendizado de máquina, [**scikit-learn**](https://scikit-learn.org/stable/), com mais de 14020 contribuidores e 24505 commits, scikit-learn é uma biblioteca que resolve uma porrada de problemas, Ela fornece algoritmos para muitas tarefas padrão de aprendizado de máquina e mineração de dados, como clustering, regressão, classificação, redução de dimensionalidade e seleção de modelos.
+E para finalizar com chave de ouro a queridinha do mundo do aprendizado de máquina, [**scikit-learn**](https://scikit-learn.org/stable/), com mais de 14020 contribuidores e 24505 commits, é uma biblioteca que resolve uma porrada de problemas, Ela fornece algoritmos para muitas tarefas padrão de aprendizado de máquina e mineração de dados, como clustering, regressão, classificação, redução de dimensionalidade e seleção de modelos.
 
 
 Para instalá-la digite no prompt, 
@@ -57,9 +57,9 @@ Para instalá-la digite no prompt,
 pip install scikit-learn
 ```
 
-Essa é a lista de biblioteca que recomendo para quem está iniciando, existe uma vasto acervo de tutorias sobre o uso de cada uma, mas as próprias documentação já estão de bom tamanho, vale uma visita nos sites oficiais.
+Essa é a lista de bibliotecas que recomendo para quem está iniciando, existe uma vasto acervo de tutorias sobre o uso de cada uma, mas as próprias documentação já estão de bom tamanho, vale uma visita nos sites oficiais.
 
 Você também pode instalar todas as biliotecas da lista através da distribuição Anaconda usando o seguinte [**link**](https://www.anaconda.com/distribution/)
 
 
-No próximos posts vou mostrar como usar com algumas funcionalidades das bibliotecas, até a próxima !!
+Nos próximos posts vou mostrar como usar algumas funcionalidades destas bibliotecas, até a próxima !!
