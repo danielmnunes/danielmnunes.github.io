@@ -14,7 +14,12 @@ Abra uma prompt de comando ou terminal, e digite *python* e aperte enter, deve a
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/prompt.png){: .align-center}
 
-Agora digite, *print(“Hello Wold !!”)* e aperte enter.
+Agora digite,
+
+```python
+print(“Hello Wold !!”)
+```
+ e aperte enter.
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/print.png){: .align-center}
 
