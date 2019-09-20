@@ -1,5 +1,5 @@
 ---
-title: "Top 5 bibliotecas Python para Ciências de Dados"
+title: "Top 5 bibliotecas Python para ciências de dados"
 date: 2019-08-21
 permalink: /posts/top5-bibs-python/
 tags: [Python, Data Science]

@@ -34,7 +34,7 @@ python script.py
 
 E aperte enter, o resultado deve aparecer no terminal.
 
-Existem vários editores e IDEs que ajudam na escrita de programas, minha recomendação é [vs code](https://code.visualstudio.com/), que é de graça e muito bom.
+Existem vários editores e IDEs que ajudam na escrita de programas, minha recomendação é o [vs code](https://code.visualstudio.com/), que é de graça e muito bom.
 
 Espero ter ajudado você que inicia no mundo python, no próximo post ensinarei instalar algumas bibliotecas que vão dá um up na sua carreira em ciências de dados, até a próxima !!
 
