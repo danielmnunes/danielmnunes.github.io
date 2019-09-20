@@ -3,6 +3,7 @@ title: "Família Exponencial"
 date: 2019-09-03
 tags: [Estatística, Inferência]
 excerpt: "Estatística, Inferência"
+comments: true
 mathjax: "true"
 ---
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/inferencia.gif){: .align-center}
