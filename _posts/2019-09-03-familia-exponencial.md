@@ -5,6 +5,8 @@ tags: [Estatística, Inferência]
 excerpt: "Estatística, Inferência"
 comments: true
 mathjax: "true"
+header:
+  teaser: "/images/inferencia.gif"
 ---
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/inferencia.gif){: .align-center}
 
