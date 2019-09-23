@@ -5,6 +5,8 @@ permalink: /posts/top5-bibs-python/
 tags: [Python, Data Science]
 comments: true
 excerpt: "Python, Data Science"
+header:
+  teaser: "/images/python.png"
 ---
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/python.png){: .align-center}
