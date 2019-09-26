@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning & Álgebra Linear: Uma Introdução"
 date: 2019-08-21
-permalink: /posts/hello/
+permalink: /posts/introal1/
 tags: [Python, Data Science, Algebra Linear]
 comments: true
 mathjax: "true"
@@ -54,6 +54,6 @@ x = np.arange(n)
 print(x)  # Resultado: array([0, 1, 2, 3, 4])
 ```
 
-Dado nosso objeto vetor podemos realizar algumas operações, com por exemplo, Soma/Subtração, que são similares às dos números comuns, seja $$x$$ , $$y$$ e $$z$$ vetores de tamanho $$n$$ a soma é definida como: $z_{i} = x_{i} + y_{i} \: \: \: \:  \forall \: \:  i = 1...n$
+Dado nosso objeto vetor podemos realizar algumas operações, com por exemplo, Soma/Subtração, que são similares às dos números comuns, seja $$x$$ , $$y$$ e $$z$$ vetores de tamanho $$n$$ a soma é definida como: $$z_{i} = x_{i} + y_{i} \: \: \: \:  \forall \: \:  i = 1...n$$
 
 
