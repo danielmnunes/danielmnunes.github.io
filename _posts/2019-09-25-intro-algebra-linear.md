@@ -45,3 +45,11 @@ Primeiro importando a biblioteca **numpy** citada [**aqui**]({{ "/posts/top5-bib
 ```python
 import numpy as np
 ```
+
+Para criar o vetor utilizarei a função *arange*
+
+```python
+x = np.arange(5)  # Resultado: array([0, 1, 2, 3, 4])
+```
+
+
