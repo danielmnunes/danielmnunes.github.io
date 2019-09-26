@@ -29,7 +29,7 @@ Portanto, qualquer operação que você deseja executar nesta imagem provavelmen
 ### Notações importantes
 
 
-Nosso primeiro objeto de estudo é o **vetor**, denotaremos ele por $$ x $$ (minúsculo) ele é basicamente uma lista de número, um individuou de um [dataset](https://www.aquare.la/datasets-o-que-sao-e-como-utiliza-los/) com todas suas variáveis explicativas  pode ser entendido como um vetor.
+Nosso primeiro objeto de estudo é o **vetor**, denotaremos ele por $$ x $$ (minúsculo) ele é basicamente uma lista de número, um individuou de um [**dataset**](https://www.aquare.la/datasets-o-que-sao-e-como-utiliza-los/) com todas suas variáveis explicativas  pode ser entendido como um vetor.
 
 Matematicamente ele é definido assim: Seja $$ \mathbb{R}^{n } $$ o espaço vetorial de tamanho n:
 
