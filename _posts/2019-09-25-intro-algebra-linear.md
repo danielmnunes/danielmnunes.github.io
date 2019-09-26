@@ -31,7 +31,7 @@ Portanto, qualquer operação que você deseja executar nesta imagem provavelmen
 
 Nosso primeiro objeto de estudo é o **vetor**, denotaremos ele por $$ x $$ (minúsculo) ele é basicamente uma lista de número, um individuou de um [**dataset**](https://www.aquare.la/datasets-o-que-sao-e-como-utiliza-los/) com todas suas variáveis explicativas  pode ser entendido como um vetor.
 
-Matematicamente ele é definido assim: Seja $$ \mathbb{R}^{n } $$ o espaço vetorial de tamanho n:
+Matematicamente ele é definido assim: Seja $$ \mathbb{R}^{n } $$ o espaço vetorial de tamanho $$n$$:
 
 
 $$ x \in \mathbb{R}^{n} \Rightarrow x = \begin{bmatrix} x_{1}\\  \vdots \\  x_{n} \end{bmatrix} $$
@@ -49,7 +49,11 @@ import numpy as np
 Para criar o vetor utilizarei a função *arange*
 
 ```python
-x = np.arange(5)  # Resultado: array([0, 1, 2, 3, 4])
+n = 5
+x = np.arange(n)
+print(x)  # Resultado: array([0, 1, 2, 3, 4])
 ```
+
+Dado nosso objeto vetor podemos realizar algumas operações, com por exemplo, Soma/Subtração, que são similares às dos números comuns, seja $$x$$ , $$y$$ e $$z$$ vetores de tamanho $$n$$ a soma é definida como: $z_{i} = x_{i} + y_{i} \: \: \: \:  \forall \: \:  i = 1...n$
 
 
