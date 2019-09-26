@@ -35,3 +35,13 @@ Matematicamente ele é definido assim: Seja $$ \mathbb{R}^{n } $$ o espaço veto
 
 
 $$ x \in \mathbb{R}^{n} \Rightarrow x = \begin{bmatrix} x_{1}\\  \vdots \\  x_{n} \end{bmatrix} $$
+
+Nos referimos a $$ x_{i} $$ como o i-ésimo elemento de $$ x $$ .
+
+Em Python podemos criar um vetor da seguinte forma:
+
+Primeiro importando a biblioteca **numpy** citada [**aqui**]({{ "/posts/top5-bibs-python/" | relative_url }})
+
+```python
+import numpy as np
+```
