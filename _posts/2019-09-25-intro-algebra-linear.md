@@ -4,6 +4,7 @@ date: 2019-08-21
 permalink: /posts/hello/
 tags: [Python, Data Science, Algebra Linear]
 comments: true
+mathjax: "true"
 excerpt: "Python, Data Science, Algebra Linear"
 ---
 
