@@ -1,5 +1,5 @@
 ---
-title: "Python: Checando se uma lista é vazia"
+title: "Python: Checando se uma lista é vazia :snake: :man_juggling:"
 date: 2019-10-04
 permalink: /posts/lista-vazia/
 tags: [Python]
