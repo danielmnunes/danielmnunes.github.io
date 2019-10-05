@@ -1,5 +1,5 @@
 ---
-title: "Uma introdução a biblioteca Numpy - Parte 1 :1234: :man_juggling:"
+title: "Uma introdução a biblioteca Numpy - Parte 1"
 date: 2019-10-05
 permalink: /posts/numpy-parte1/
 tags: [Python, Numpy]
