@@ -1,12 +1,12 @@
 ---
-title: "Uma introdução a biblioteca Numpy - Parte 1:1234: :man_juggling:"
+title: "Uma introdução a biblioteca Numpy - Parte 1 :1234: :man_juggling:"
 date: 2019-10-04
 permalink: /posts/numpy-parte1/
 tags: [Python, Numpy]
 comments: true
 excerpt: "Python, Numpy"
 header:
-  teaser: "/images/python.png"
+  teaser: "/images/numpy.png"
 ---
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/numpy.png){: .align-center}
@@ -27,21 +27,23 @@ Por esses e outros motivos, operações em Arrays Numpy são mais eficientes que
 
 Neste post veremos as estruturas básicas de Numpy e como criar esses objetos, também veremos funções que mostram informações importantes.
 
-[**aqui**]({{ "/posts/top5-bibs-python/" | relative_url }}) você vê como instalar Numpy em sua máquina
+[**aqui**]({{ "/posts/top5-bibs-python/" | relative_url }}) você encontra como instalar Numpy em sua máquina
 
 ## Importando a biblioteca
 
 Para ser usada, primeiro precisamos importar a biblioteca para nosso programa, por convenção Numpy é apelidada([**alias**](https://pt.wikipedia.org/wiki/Alias_(comando)) para np, assim:
 
-'''python
+```python
 import numpy as np
-'''
+```
 
 ## O objeto Array Numpy
 
 O core da biblioteca Numpy é a estrutura de dados para representar arrays multidimensionais e dados homogêneos, a principal estrutura é a classe *ndarray*, que além da capacidade armazenamento de dados possui vários atributos de informações([**metadata**](https://pt.wikipedia.org/wiki/Metadados)) sobre o array, como o tamanho, tipo dos dados e outros atributos.
 
 Descrição de alguns atributos
+
+
 | Atributos     | Descrição |
 | ------------- | ------------- |
 | shape         | Uma tupla que contém o número de elementos(o tamanho) de cada eixo(axis) do array  |
@@ -54,7 +56,7 @@ Uma lista completa de todos atributos do objeto *ndarray* pode ser vista com o c
 
 Segue um exemplo de criação de um objeto ndarray e o uso de seus atributos:
 
-'''python
+```python
 dados = np.array([[1, 2], [3, 4], [5, 6]])
 print(type(dados)) # <class 'numpy.ndarray'>
 print(dados) # array([[1, 2], [3, 4], [5, 6]])
@@ -63,7 +65,7 @@ print(dados.shape) # (3, 2)
 print(dados.size) # 6
 print(dados.dtype) # dtype('int64')
 print(dados.nbytes) # 48
-'''
+```
 
 ## Conclusão
 
