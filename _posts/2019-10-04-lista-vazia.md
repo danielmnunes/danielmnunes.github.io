@@ -62,4 +62,6 @@ Em Python uma lista não vazia resulta um *True* em condicionais, por isso o seg
 \end{algorithm}
 " %}
 
+$$ \sum \theta $$
+
 Até a próxima :v:
