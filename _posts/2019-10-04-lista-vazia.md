@@ -5,6 +5,8 @@ permalink: /posts/lista-vazia/
 tags: [Python]
 comments: true
 excerpt: "Python"
+header-includes:
+  - \usepackage{algorithm2e}
 header:
   teaser: "/images/python.png"
 mathjax: "true"
