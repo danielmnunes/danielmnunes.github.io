@@ -2,4 +2,4 @@ source "https://rubygems.org"
 gemspec
 
 gem "jekyll-sitemap"
-gem "jekyll-pseudocode"
+gem "jekyll-pseudo"
