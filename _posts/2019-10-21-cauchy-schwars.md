@@ -5,6 +5,7 @@ permalink: /posts/cauchy-schwarz/
 tags: [Matemática, Estatística]
 comments: true
 excerpt: "Matemática, Estatística"
+mathjax: "true"
 header:
   teaser: "/images/math.gif"
 ---
