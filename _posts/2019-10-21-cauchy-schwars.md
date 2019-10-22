@@ -17,10 +17,8 @@ $$\left | \sum_{i=1}^{n}x_{i}y_{i} \right |\leq \left ( \sum_{i=1}^{n}x_{i}^{2} 
 **Prova:** Para qualquer $$t$$ escalar real temos:
 
 \begin{align}
-0 & \leq \sum_{i=1}^{n} \left ( x_{i} + ty_{i} \right )^{2} \\
-
-& = \sum_{i=1}^{n}x_{i}^{2} + 2\sum_{i=1}^{n}x_{i}y_{i} + t^{2}\sum_{i=1}^{n}y_{i}^{2} \\
-
+& 0 \leq \sum_{i=1}^{n} \left ( x_{i} + ty_{i} \right )^{2}\\
+& = \sum_{i=1}^{n}x_{i}^{2} + 2\sum_{i=1}^{n}x_{i}y_{i} + t^{2}\sum_{i=1}^{n}y_{i}^{2}\\
 & = c + bt + at^{2}
 \end{align}
 
