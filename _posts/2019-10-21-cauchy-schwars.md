@@ -19,7 +19,7 @@ $$\left | \sum_{i=1}^{n}x_{i}y_{i} \right |\leq \left ( \sum_{i=1}^{n}x_{i}^{2} 
 $$
 \begin{align}
 & 0 \leq \sum_{i=1}^{n} \left ( x_{i} + ty_{i} \right )^{2}\\
-& = \sum_{i=1}^{n}x_{i}^{2} + 2\sum_{i=1}^{n}x_{i}y_{i} + t^{2}\sum_{i=1}^{n}y_{i}^{2}\\
+& = \sum_{i=1}^{n}x_{i}^{2} + 2t\sum_{i=1}^{n}x_{i}y_{i} + t^{2}\sum_{i=1}^{n}y_{i}^{2}\\
 & = c + bt + at^{2}
 \end{align}
 $$
@@ -32,3 +32,9 @@ $$ \left ( \frac{b}{2} \right )^{2} \leq ac $$
 
 Aplicando raiz quadrada na desigualdade acima chegamos ao resultado desejado.
 
+$$
+\begin{align}
+& \frac{b}{2} \leq \sqrt{ac} \\
+& = \left ( \sum_{i=1}^{n}x_{i}^{2} \right )^{\frac{1}{2}} \left ( \sum_{i=1}^{n}y_{i}^{2} \right )^{\frac{1}{2}}
+\end{align}
+$$
