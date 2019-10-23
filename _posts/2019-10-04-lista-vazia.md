@@ -34,25 +34,6 @@ if Inimigos:
 
 Em Python uma lista não vazia resulta um *True* em condicionais, por isso o segundo *if* é *False* e não é printado a mensagem.
 
-{% pseudocode %}
-Function swap(old, new)
-  remaining <- quorumSize
-  success <- False
-  For Each host
-    result[host] <- send(host, propose(old, new))
-    If result[host] = "ok"
-      remaining--
-
-  If remaining > 1+quorumSize/2
-    success <- True
-
-  For Each result
-    If success
-      send(host, confirm(old, new))
-    Else
-      send(host, cancel(old, new))
-{% endpseudocode %}
-
 $$ \sum \theta $$
 
 Até a próxima :v:
