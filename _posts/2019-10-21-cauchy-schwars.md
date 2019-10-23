@@ -26,7 +26,7 @@ $$
 
 Onde $$a = \sum_{i=1}^{n}y_{i}^{2}$$, $$b = 2\sum_{i=1}^{n}x_{i}y_{i}$$ e $$c =  \sum_{i=1}^{n}x_{i}^{2}$$
 
-Como $$c + bt + at^{2} \geq 0$$ para todo escalar t real, a quação quadrática $$c + bt + at^{2}$$ não tem duas raízes reais, portanto $$ b^{2} - 4ac \leq 0 $$, ou seja:
+Como $$c + bt + at^{2} \geq 0$$ para todo escalar t real, a equação quadrática $$c + bt + at^{2}$$ não tem duas raízes reais, portanto $$ b^{2} - 4ac \leq 0 $$, ou seja:
 
 $$ \left ( \frac{b}{2} \right )^{2} \leq ac $$
 
