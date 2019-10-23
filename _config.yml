@@ -197,7 +197,6 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 # Conversion
 markdown: kramdown
 kramdown:
-   math_engine: mathjax
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
@@ -237,7 +236,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-pseudo
 
 # mimic GitHub Pages with --safe
 whitelist:
