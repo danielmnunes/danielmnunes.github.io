@@ -35,6 +35,5 @@ if Inimigos:
 
 Em Python uma lista não vazia resulta um *True* em condicionais, por isso o segundo *if* é *False* e não é printado a mensagem.
 
-$$ \sum \theta $$
 
 Até a próxima :v:
