@@ -73,4 +73,4 @@ No exemplo acima criamos um array usando a função *np.array*, depois de criado
 
 Em posts futuros veremos outras formas de criar um array.
 
-Até a próxima :v: :v:
+Até a próxima :v:
