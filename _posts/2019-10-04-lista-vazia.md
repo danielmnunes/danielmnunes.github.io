@@ -5,6 +5,7 @@ permalink: /posts/lista-vazia/
 tags: [Python]
 comments: true
 excerpt: "Python"
+mathjax: "true"
 header:
   teaser: "/images/python.png"
 ---
