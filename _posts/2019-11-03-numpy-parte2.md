@@ -11,7 +11,7 @@ header:
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/numpy.png){: .align-center}
 
-Na post anterior, vimos a estrutura de dados básica do NumPy para representar matrizes, a classe ndarray e os atributos básicos dessa classe. Neste post, focaremos nas funções da biblioteca NumPy que podem ser usadas para criar instâncias ndarray.
+No post anterior, vimos a estrutura de dados básica do NumPy para representar matrizes, a classe ndarray e os atributos básicos dessa classe. Neste post, focaremos nas funções da biblioteca NumPy que podem ser usadas para criar instâncias ndarray.
 
 Arrays Numpy podem ser criados de várias maneiras, dependendo das propriedades para o quais serão usadas. Como vimos no post anterior, uma maneira de inicializar um Array Numpy é usando a função ```np.array``` e uma lista Python, de forma explicita. 
 
