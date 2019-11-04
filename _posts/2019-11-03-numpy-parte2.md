@@ -81,7 +81,7 @@ vetor = np.linspace(1, 10, 5)
 Um vetor de números aleatórios
 ```python
 vetor = np.random.rand(5)
-# [0.15834784, 0.6052958 , 0.81409306, 0.5086332 , 0.68268548]
+# [0.158347, 0.60529 , 0.814093, 0.50863, 0.682685]
 ```
-Esse são alguns métodos de criação de Arrays presentes na biblioteca Numpy. No próximo post falarei de indexação e fatiamento de Arrays Numpy, até a proxima :v:
+Esses são alguns métodos de criação de Arrays presentes na biblioteca Numpy. No próximo post falarei de indexação e fatiamento de Arrays Numpy, até a proxima :v:
 
