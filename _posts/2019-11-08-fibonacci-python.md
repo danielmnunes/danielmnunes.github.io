@@ -108,7 +108,7 @@ Uma chamada para fib(20) resultará em apenas 39 chamadas de fib(), em oposiçã
 
 ## Memoização automática
 
-O código anterior pode ser simplificado. Python possui um decorador padrão para memoizar automaticamente qualquer função. no código abaixo, o decorador *@functools.lru_cache ()* é usado com a função recursiva que utiliza os casos bases. Cada vez que fib() é executado com um novo argumento, o decorador faz com que o valor de retorno seja armazenado em cache. Em chamadas futuras de fib() com o mesmo argumento, o valor de retorno anterior de fib() para esse argumento é recuperado do cache e retornado.
+O código anterior pode ser simplificado. Python possui um decorador padrão para memoizar automaticamente qualquer função. No código abaixo, o decorador *@functools.lru_cache ()* é usado com a função recursiva que utiliza os casos bases. Cada vez que fib() é executado com um novo argumento, o decorador faz com que o valor de retorno seja armazenado em cache. Em chamadas futuras de fib() com o mesmo argumento, o valor de retorno anterior de fib() para esse argumento é recuperado do cache e retornado.
 
 ```python
 from functools import lru_cache
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     print(fib(50))
 ```
 
-Observe que somos capazes de calcular fib(50) instantaneamente, mesmo que o corpo da função seja a mesma que a estratégia de usar apenas casos bases. A propriedade maxsize de @lru_cache indica quantas das chamadas mais recentes da função que está decorando devem ser armazenadas em cache. Definir como *None* indica que não há limite.
+Observe que somos capazes de calcular fib(50) instantâneamente, mesmo que o corpo da função seja a mesma que a estratégia de usar apenas casos bases. A propriedade maxsize de @lru_cache indica quantas das chamadas mais recentes da função que está decorando devem ser armazenadas em cache. Definir como *None* indica que não há limite.
 
 ## Seja simples, Fibonacci bottom-up
 
