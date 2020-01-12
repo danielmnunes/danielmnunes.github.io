@@ -9,6 +9,8 @@ header:
   teaser: "/images/po.png"
 ---
 
+![image-center]({{ site.url }}{{ site.baseurl }}/images/po.png){: .align-center}
+
 ## Um pouco de Historia
 A Pesquisa Operacional, ou simplesmente PO, surgiu na Inglaterra durante a Segunda Guerra Mundial (1939-1945) para a solução de problemas de natureza logística, tática e de estratégia militar, quando um grupo de cientistas foi convocado para decidir sobre a utilização mais eficaz dos recursos militares limitados, marcando a primeira atividade formal desse campo de estudo. Dentre os problemas estudados, destacam-se: projeto, manutenção e inspeção de aviões; projeto de explosivos, tanques e motores; melhoria da utilização de radar, canhões antiaéreos e táticas de bombardeios a submarino; dimensionamento de frota, entre outros.
 
@@ -19,5 +21,11 @@ Em termos gerais, podemos dizer que a Pesquisa Operacional consiste na utilizaç
 
 
 ## Modelagem para Tomada de Decisão
+Um modelo é a representação simplificada de um sistema real, podendo ser um projeto já existente ou um projeto futuro. No primeiro caso, pretende-se reproduzir o funcionamento do sistema real existente, de forma a aumentar a produtividade, enquanto no segundo caso o objetivo é definir a estrutura ideal do futuro sistema.
+
+O comportamento de um sistema real é influenciado por diversas variáveis envolvidas no processo de tomada de decisão. Devido à grande complexidade desse sistema, torna-se necessária a sua simplificação, a partir de um modelo, de forma que as principais variáveis envolvidas no sistema ou projeto que se pretende entender ou controlar sejam consideradas na sua construção, conforme mostra a figura abaixo.
+
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/POmodelo.png){: .align-center}
 
 
