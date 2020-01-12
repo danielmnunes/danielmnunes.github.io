@@ -54,7 +54,7 @@ Como exemplos de restrições a serem consideradas em um modelo matemático, pod
 
 A partir do trabalho de Eom e Kim (2006), uma classificação das ferramentas da Pesquisa Operacional é proposta, conforme mostra a figura abaixo.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/images/POFerramentas.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/images/pofe.png){: .align-center}
 
 As ferramentas da Pesquisa Operacional podem ser divididas em modelos determinísticos e estocásticos. As principais características dos modelos determinísticos são: todas as variáveis envolvidas no processo são fixas; uma única solução é gerada; utilizam-se, geralmente, de métodos analíticos para sua solução; garantem a solução ótima. Com relação aos modelos estocásticos, as principais características são: pelo menos uma das variáveis envolvidas no processo é aleatória; geram mais de uma solução e buscam analisar os diferentes cenários; utilizam-se, geralmente, de métodos numéricos (programas de computador) para sua solução; não garantem a solução ótima. Dentre os modelos determinísticos, destacam-se: programação linear, programação binária e inteira, programação em redes, programação
 por metas ou multiobjetivo, programação não linear e programação dinâmica determinística. Dentre os modelos estocásticos, podemos citar: teoria das filas, simulação, programação dinâmica estocástica (cadeias de Markov) e teoria dos jogos.
