@@ -34,6 +34,14 @@ $$ \begin{alignat}{6}
                             &     &  a_{21} x_{1} & + & a_{22} x_{2} & \cdots &  a_{2n} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} b_{2} && \tag{Restrição 2} \\
                             &     &  \vdots       &   & \vdots  &  &    & \vdots &&  \\
                             &     &  a_{m1} x_{1} & + & a_{m2} x_{2} & \cdots &  a_{mn} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} b_{m} && \tag{Restrição m} \\
-                            &     & \rlap{x_i \ge 0, i = 1, 2, \cdots ,n }
+                            &     & \rlap{x_j \ge 0, j = 1, 2, \cdots ,n }
 \end{alignat}
 $$
+
+em que:  
+$$z$$ é a função objetivo;  
+$$x_{j}$$ são as variáveis de decisão, principais ou controláveis, $$j = 1, 2, \cdots, n$$  
+$$a_{ij}$$ é a constante ou coeficiente da i-ésima restrição da j-ésima variável, $$i = 1, 2, \cdots, m$$, $$j = 1, 2, \cdots, n$$  
+$$b_{i}$$ é o termo independente ou quantidade de recursos disponíveis da i-ésima restrição, $$i = 1, 2, \cdots, m$$  
+$$c_{j}$$é a constante ou coefi ciente da j-ésima variável da função objetivo, $$j = 1, 2, \cdots, n$$  
+
