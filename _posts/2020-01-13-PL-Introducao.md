@@ -40,8 +40,8 @@ $$
 
 em que:  
 $$z$$ é a função objetivo;  
-$$x_{j}$$ são as variáveis de decisão, $$j = 1, 2, \cdots, n$$  
+$$x_{j}$$ é a j-ésima variável de decisão, $$j = 1, 2, \cdots, n$$  
 $$a_{ij}$$ é a constante da i-ésima restrição da j-ésima variável, $$i = 1, 2, \cdots, m$$, $$j = 1, 2, \cdots, n$$  
 $$b_{i}$$ é o termo independente ou quantidade de recursos disponíveis da i-ésima restrição, $$i = 1, 2, \cdots, m$$  
-$$c_{j}$$é a constante da j-ésima variável da função objetivo, $$j = 1, 2, \cdots, n$$  
+$$c_{j}$$ é a constante da j-ésima variável da função objetivo, $$j = 1, 2, \cdots, n$$  
 
