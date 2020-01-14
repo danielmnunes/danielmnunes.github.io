@@ -5,6 +5,7 @@ permalink: /posts/pl-introducao/
 tags: [Pesquisa Operacional, Programação Linear]
 comments: true
 excerpt: "Pesquisa Operacional, Programação Linear"
+mathjax: "true"
 header:
   teaser: "/images/po.png"
 ---
