@@ -32,7 +32,7 @@ $$ \begin{alignat}{6}
   \max \mbox{ou} \min \quad & z = &  c_{1} x_{1}  & + & c_{2} x_{2}  & \cdots &  c_{n} x_{n}  &    && \\
   \mbox{s.t.} \quad         &     &  a_{11} x_{1} & + & a_{12} x_{2} & \cdots &  a_{1n} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} b_{1} && \tag{Restrição 1} \\
                             &     &  a_{21} x_{1} & + & a_{22} x_{2} & \cdots &  a_{2n} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} b_{2} && \tag{Restrição 2} \\
-                            &     &  \vdots       &   & \vdots  & \cdots &  \vdots  & \vdots &&  \\
+                            &     &  \vdots       &   & \vdots  &  &    & \vdots &&  \\
                             &     &  a_{m1} x_{1} & + & a_{m2} x_{2} & \cdots &  a_{mn} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} b_{m} && \tag{Restrição m} \\
                             &     & \rlap{x_i \ge 0, i = 1, 2, \cdots ,n }
 \end{alignat}
