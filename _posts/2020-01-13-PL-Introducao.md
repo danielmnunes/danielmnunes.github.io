@@ -31,3 +31,5 @@ $$ \begin{alignat}{3}
   \max \mbox{ou} \min \quad & z = &  c_{1} x_{1}  & + & c_{2} x_{2}  & \cdots &  c_{n} x_{n}  &    && \\
   \mbox{s.t.} \quad         &     &  a_{11} x_{1} & + & a_{12} x_{2} & \cdots &  a_{1n} x_{n} & \left \{ \leqslant , = , \geqslant  \right \} c_{n} && \tag{Restrição 1} \\
                             &     & \rlap{x_i \ge 0, i = 1, 2, \cdots ,n }
+\end{alignat}
+$$
