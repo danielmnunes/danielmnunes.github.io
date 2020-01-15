@@ -49,8 +49,8 @@ O problema padrão de programação linear também pode ser escrito de forma mat
 
 $$ \begin{alignat}{3}
             \max \mbox{ou} \min \quad & \textbf{z} = &  \textbf{cx} & && \\
-            \mbox{s.t.}         \quad &              &  \textbf{Ax} & \textbf{= b} && \\
-                                      &              &  \textbf{x} \geqslant \textbf{0}
+            \mbox{s.t.}         \quad              &  \textbf{Ax} & \textbf{= b} && \\
+                                                    &  \textbf{x} \geqslant \textbf{0}
   \end{alignat}
 $$
 
