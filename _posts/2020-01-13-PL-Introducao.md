@@ -50,7 +50,7 @@ O problema padrão de programação linear também pode ser escrito de forma mat
 $$ \begin{alignat}{3}
             \max \mbox{ou} \min \quad & \textbf{z} = &  \textbf{cx} && \\
             \mbox{s.t.}         \quad &              &  \textbf{Ax = b} && \\
-                                      &              &  \textbf{x \ge 0}
+                                      &              &  \textbf{x \geqslant 0}
   \end{alignat}
 $$
 
