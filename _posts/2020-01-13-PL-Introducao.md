@@ -48,8 +48,8 @@ $$c_{j}$$ é a constante da j-ésima variável da função objetivo, $$j = 1, 2,
 O problema padrão de programação linear também pode ser escrito de forma matricial:
 
 $$ \begin{alignat}{3}
-            \max \mbox{ou} \min \quad & \textbf{z} = &  \textbf{cx} && \\
-            \mbox{s.t.}         \quad &              &  \textbf{Ax = b} && \\
+            \max \mbox{ou} \min \quad & \textbf{z} = &  \textbf{cx} & && \\
+            \mbox{s.t.}         \quad &              &  \textbf{Ax} & \textbf{= b} && \\
                                       &              &  \textbf{x \geqslant 0}
   \end{alignat}
 $$
