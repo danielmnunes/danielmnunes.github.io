@@ -63,7 +63,7 @@ a_{21} & a_{22} & \cdots  & a_{2n} \\
 \vdots & \vdots  & \ddots   & \vdots \\  
 a_{m1} & a_{m2} & \cdots  & a_{mn}
 \end{bmatrix}
-,
+;
 
 x = \begin{bmatrix}
 x_{1}\\ 
@@ -72,7 +72,7 @@ x_{2}\\
 x_{n}
 \end{bmatrix}
 
-,
+;
 
 b = \begin{bmatrix}
 b_{1}\\ 
@@ -81,13 +81,13 @@ b_{2}\\
 b_{m}
 \end{bmatrix}
 
-,
+;
 
 c = \begin{bmatrix}
 c_{1} & c_{2}  & \cdots   & c_{n}
 \end{bmatrix}
 
-,
+;
 
 \textbf{0} = \begin{bmatrix}
 0 \\ 
@@ -97,3 +97,11 @@ c_{1} & c_{2}  & \cdots   & c_{n}
 \end{bmatrix}
 
 $$
+
+## Métodos de solução
+
+Para que a solução ótima seja determinada, diversos algoritmos ou métodos de solução podem ser aplicados, sendo o algoritmo Simplex, desenvolvido em 1947 por George B. Dantzig, o mais conhecido. Para quem quer se aprofundar no assunto, [**aqui**](https://pt.wikipedia.org/wiki/Algoritmo_simplex)) você encontra mais sobre.
+
+No próximo post mostrarei aplicaçãoes de programação linear utilizando a linguagem Python.
+
+Até a próxima :v:
