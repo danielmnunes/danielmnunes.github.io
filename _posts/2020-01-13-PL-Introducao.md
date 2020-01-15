@@ -49,8 +49,51 @@ O problema padrão de programação linear também pode ser escrito de forma mat
 
 $$ \begin{alignat}{3}
             \max \mbox{ou} \min \quad & \textbf{z} =   \textbf{cx} & && \\
-            \mbox{s.t.}         \quad              &  \textbf{Ax}  \textbf{= b} && \\
+            \mbox{s.t.}         \quad              &  \textbf{Ax} \, \textbf{=  b} && \\
                                                     &  \textbf{x} \geqslant \textbf{0}
   \end{alignat}
 $$
 
+em que:
+
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & \cdots  & a_{1n} \\ 
+a_{21} & a_{22} & \cdots  & a_{2n} \\ 
+\vdots & \vdots  & \ddots   & \vdots \\  
+a_{m1} & a_{m2} & \cdots  & a_{mn}
+\end{bmatrix}
+,
+
+x = \begin{bmatrix}
+x_{1}\\ 
+x_{2}\\ 
+\vdots \\ 
+x_{n}
+\end{bmatrix}
+
+,
+
+b = \begin{bmatrix}
+b_{1}\\ 
+b_{2}\\ 
+\vdots \\ 
+b_{m}
+\end{bmatrix}
+
+,
+
+c = \begin{bmatrix}
+c_{1} & c_{2}  & \cdots   & c_{n}
+\end{bmatrix}
+
+,
+
+\textbf{0} = \begin{bmatrix}
+0 \\ 
+0 \\ 
+\vdots \\ 
+0
+\end{bmatrix}
+
+$$
