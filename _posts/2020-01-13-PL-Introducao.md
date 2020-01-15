@@ -45,3 +45,11 @@ $$a_{ij}$$ é a constante da i-ésima restrição da j-ésima variável, $$i = 1
 $$b_{i}$$ é o termo independente ou quantidade de recursos disponíveis da i-ésima restrição, $$i = 1, 2, \cdots, m$$  
 $$c_{j}$$ é a constante da j-ésima variável da função objetivo, $$j = 1, 2, \cdots, n$$  
 
+O problema padrão de programação linear também pode ser escrito de forma matricial:
+
+$$ \begin{alignat}{3}
+            \max \mbox{ou} \min \quad & \textbf{z} = &  \textbf{cx} && \\
+            \mbox{s.t.}         \quad &              &  \textbf{Ax = b} && \\
+                                      &              &  \textbf{x \ge 0}
+$$
+
