@@ -100,7 +100,7 @@ $$
 
 ## Métodos de solução
 
-Para que a solução ótima seja determinada, diversos algoritmos ou métodos de solução podem ser aplicados, sendo o algoritmo Simplex, desenvolvido em 1947 por George B. Dantzig, o mais conhecido. Para quem quer se aprofundar no assunto, [**aqui**](https://pt.wikipedia.org/wiki/Algoritmo_simplex)) .
+Para que a solução ótima seja determinada, diversos algoritmos ou métodos de solução podem ser aplicados, sendo o algoritmo Simplex, desenvolvido em 1947 por George B. Dantzig, o mais conhecido. Para quem quer se aprofundar no assunto, [**aqui**](https://pt.wikipedia.org/wiki/Algoritmo_simplex).
 
 No próximo post mostrarei aplicaçãoes de programação linear utilizando a linguagem Python.
 
