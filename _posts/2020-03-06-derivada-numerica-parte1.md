@@ -10,4 +10,5 @@ header:
   teaser: "/images/derivada.png"
 ---
 
-**Teorema:**
+A série de Taylor e o teorema de Taylor desempenham um papel fundamental nas aproximações de derivadas por métodos de diferenças finitas. Começamos este post com uma revisão desses resultados importantes.  
+Série de Taylor: Se uma função f é infinita vezes diferenciável em $$ \mathbb{R}$$, então para qualquer ponto $$x_{0}$$ escolhido, temos:  
