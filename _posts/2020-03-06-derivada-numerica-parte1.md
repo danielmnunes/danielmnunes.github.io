@@ -9,3 +9,5 @@ mathjax: "true"
 header:
   teaser: "/images/derivada.png"
 ---
+
+**Teorema:**
