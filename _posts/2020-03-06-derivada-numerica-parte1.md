@@ -1,5 +1,5 @@
 ---
-title: "Métodos Numéricos - Derivada Numérica - Parte I"
+title: "Métodos Numéricos: Derivada Numérica - Parte I"
 date: 2020-03-06
 permalink: /posts/devirada-numerica1/
 tags: [Matemática, Computação]
