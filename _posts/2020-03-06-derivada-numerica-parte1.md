@@ -18,6 +18,7 @@ Série de Taylor: Se uma função f é infinita vezes diferenciável em $$ \math
 
 # Algorithm 1
 Just a sample algorithmn
+$$
 \begin{algorithm}[H]
 \DontPrintSemicolon
 \SetAlgoLined
@@ -37,3 +38,4 @@ Just a sample algorithmn
 }
 \caption{While loop with If/Else condition}
 \end{algorithm} 
+$$
