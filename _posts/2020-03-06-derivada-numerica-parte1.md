@@ -9,7 +9,7 @@ mathjax: "true"
 header:
   teaser: "/images/derivada.png"
 header-includes:
-  - \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+  \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 ---
 
 A série de Taylor e o teorema de Taylor desempenham um papel fundamental nas aproximações de derivadas por métodos de diferenças finitas. Começamos este post com uma revisão desses resultados importantes.  
