@@ -45,3 +45,24 @@ $$
 
 $$
 
+onde C é uma constante independente de $$h$$ e $$k$$ e queremos determinar $$k$$. Se $$k > 0$$, à medida que $$h$$ diminui, temos a certeza de que o erro será zero. Quanto maior for o $$k$$, mais rápido ele será zero. Freqüentemente, o valor de $$k$$ nos permitirá comparar diferentes algoritmos para determinar qual é mais preciso.
+
+## Notação Big O
+
+Suponha que $$u$$ é a verdadeira solução para um problema matemático e $$\widetilde{u}(h)$$ é uma aproximação à solução que depende de um parâmetro $$h$$, então:
+
+$$
+
+\left | u - \widetilde{u}(h) \right |  \leq Ch^{k}
+
+$$
+
+com $$C$$ sendo uma constante independente de $$h$$ e $$k$$, temos:
+
+$$
+
+ \left | u - \widetilde{u}(h) \right |  \leq O(h^{k})
+
+$$
+
+Isso é interpretado como "O erro está na ordem de $$h^{k}$$.
