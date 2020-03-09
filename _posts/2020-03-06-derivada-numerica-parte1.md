@@ -36,3 +36,12 @@ Uma maneira de pensar nesses polinômios de Taylor é como os polinômios tangen
 ## Terminologia de convergência
 
 Para um dado problema matemático, suponha que exista uma solução $$u$$. Se usarmos um algoritmo numérico para aproximar-se de $$u$$, obteremos uma solução numérica $$\widetilde{u}$$(é extremamente rara $$u = \widetilde{u}$$). A questão fundamental é: quão perto $$\widetilde{u}$$ está de $$u$$? É nosso trabalho quantificar para essa diferença.
+
+Em muitos casos, o erro em uma aproximação depende de um parâmetro. Por exemplo, no método de Newton, o erro normalmente depende de quantas iterações são executadas. Se tentarmos calcular uma derivada $$ f{}'(x) $$ por $$ \frac{f(x + h) - f(x)}{h} $$  para algum $$h$$, o erro dependerá naturalmente de $$h$$. Portanto, neste caso, queremos quantificar o erro em termos de $$h$$. Ou seja, queremos ser capazes de escrever.
+
+$$
+
+ \left | \frac{f(x + h) - f(x)}{h} - f{}'(x) \right |  \leq Ch^{k}
+
+$$
+
