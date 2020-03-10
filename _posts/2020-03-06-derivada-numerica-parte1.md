@@ -67,3 +67,17 @@ $$
 
 Isto é interpretado como "O erro está na ordem de $$h^{k}$$.  
 para convergência de primeira ordem ($$k = 1$$), o erro é reduzido proporcionalmente à redução de $$h$$. Em outras palavras, se $$h$$ for cortado pela metade, você também pode esperar que o erro seja cortado pela metade. Para convergência de segunda ordem, ou seja, $$O(h^{2})$$; entretanto, se $$h$$ for cortado pela metade, o erro será cortado por $$ (\frac{1}{2})^{2} = \frac{1}{4} $$, que obviamente é bem melhor.
+
+**Exemplo:** Suponha que tenhamos um algoritmo em que o erro depende de $$h$$ e para uma sequência de $$h's \left \{ 1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \frac{1}{32} \right \}$$ a sequência de erros é dada por:
+
+$$
+10, 5, 2.5, 1.25, 0.625, 0.3125
+$$
+
+e converge com precisão de primeira ordem, ou seja, $$O(h)$$. Isso ocorre porque quando $$h$$ é cortado pela metade, o mesmo ocorre com os erros. Para os mesmos $$h's$$, a sequência de erros
+
+$$
+100, 25, 6.25, 1.5625, 0.390625, 0.09765625
+$$
+
+converge com precisão de segunda ordem, ou seja, $$O(h^{2})$$, pois os erros são cortados por um fator de $$4 = 2^{2}$$ quando $$h$$ é cortado pela metade.
