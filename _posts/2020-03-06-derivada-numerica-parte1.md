@@ -65,4 +65,5 @@ $$
 
 $$
 
-Isso é interpretado como "O erro está na ordem de $$h^{k}$$.
+Isto é interpretado como "O erro está na ordem de $$h^{k}$$.  
+para convergência de primeira ordem ($$k = 1$$), o erro é reduzido proporcionalmente à redução de $$h$$. Em outras palavras, se $$h$$ for cortado pela metade, você também pode esperar que o erro seja cortado pela metade. Para convergência de segunda ordem, ou seja, $$O(h^{2})$$; entretanto, se $$h$$ for cortado pela metade, o erro será cortado por $$ (\frac{1}{2})^{2} = \frac{1}{4} $$, que obviamente é bem melhor.
