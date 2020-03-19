@@ -13,3 +13,5 @@ header:
 # Aproximando a primeira derivada
 
 ## Derivada Forward e backward
+
+Considere uma discretização de um intervalo $$[a, b]$$ em $$N + 1$$ pontos igualmente espaçados, chame-os.
