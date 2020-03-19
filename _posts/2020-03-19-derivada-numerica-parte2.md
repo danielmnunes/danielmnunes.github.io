@@ -28,3 +28,10 @@ Queremos calcular $$f{}'(x_{0})$$ apenas com essa informação limitada. Lembran
 $$
 f{}'(x) = \lim\limits_{h\to 0} \frac{f(x+h) - f(x)}{h}
 $$
+
+um primeiro palpite em aproximar $$f{}'(x)$$ é usar um dos:
+- Derivada forward com dois pontos: $$ f{}'(x_{i}) \approx \lim\limits_{h\to 0} \frac{f(x_{i+1}) - f(x_{i})}{h} $$
+- Derivada backward com dois pontos: $$ f{}'(x_{i}) \approx \lim\limits_{h\to 0} \frac{ f(x_{i}) - f(x_{i-1})}{h} $$
+
+Ilustrações dessas idéias são mostradas na figura abaixo. Essas duas aproximações da derivada são simplesmente as inclinações entre os pontos adjacentes.
+![image-center]({{ site.url }}{{ site.baseurl }}/images/pontos1.png){: .align-center}
