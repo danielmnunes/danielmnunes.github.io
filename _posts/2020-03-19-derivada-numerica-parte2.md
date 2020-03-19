@@ -29,9 +29,22 @@ $$
 f{}'(x) = \lim\limits_{h\to 0} \frac{f(x+h) - f(x)}{h}
 $$
 
-um primeiro palpite em aproximar $$f{}'(x)$$ é usar um dos:
+um primeiro palpite em aproximar $$f{}'(x)$$ é usar uma das seguintes abordagens:
 - Derivada forward com dois pontos: $$ f{}'(x_{i}) \approx \lim\limits_{h\to 0} \frac{f(x_{i+1}) - f(x_{i})}{h} $$
 - Derivada backward com dois pontos: $$ f{}'(x_{i}) \approx \lim\limits_{h\to 0} \frac{ f(x_{i}) - f(x_{i-1})}{h} $$
 
-Ilustrações dessas idéias são mostradas na figura abaixo. Essas duas aproximações da derivada são simplesmente as inclinações entre os pontos adjacentes.
+Ilustrações dessas abordagens são mostradas na figura abaixo. Essas duas aproximações da derivada são simplesmente as inclinações entre os pontos adjacentes.
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/pontos1.png){: .align-center}
+
+Perguntas importantes a serem feitas sobre essas aproximações são "Qual a precisão delas?" e "Uma dessas aproximações é melhor que a outra?" As respostas para essas perguntas podem ser determinadas na série Taylor. Seja h o espaçamento entre os pontos, como um parâmetro. Esperamos que, à medida que h diminua, as aproximações de derivada forward e backward devem se aproximar do valor real de $$f{}'(x_{i})$$ (assumindo que não há erro de arredondamento significativo, o que não deve ser um problema se h não for muito pequeno). Usando o teorema de Taylor com $$x_{0} = x_{i}$$ e escolher $$x = x_{i + 1}$$ temos:
+$$
+f(x_{i+1}) = f(x_{i}) + f{}'(x_{i})(x_{i+1} - x_{i}) + \frac{f{}''(c)}{2!}(x_{i+1} - x_{i})^{2}
+$$
+Para algum $$ x_{i} \leq  c \leq x_{i+1} $$. Tome $$h = x_{i+1} - x_{i}$$, isso reduz a:
+$$
+f(x_{i+1}) = f(x_{i}) + hf{}'(x_{i}) + \frac{h^{2}f{}''(c)}{2!}
+$$
+Agora, fazendo algumas manipulações algebricas temos:
+$$
+\frac{f(x_{i+1}) - f(x_{i})}{h} - f{}'(x_{i}) = \frac{h^{2}f{}''(c)}{2!}
+$$
