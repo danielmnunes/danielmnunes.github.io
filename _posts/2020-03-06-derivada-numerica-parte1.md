@@ -19,6 +19,7 @@ A série de Taylor e o teorema de Taylor desempenham um papel fundamental nas ap
 $$
 f(x) = f(x_{0}) + f{}'(x_{0})(x - x_{0}) + \frac{f{}''(x_{0})}{2!}(x - x_{0})^{2} + \frac{f{}'''(x_{0})}{3!}(x - x_{0})^{3} + \cdots
 $$
+
 para todo número real $$x$$.
 
 **Teorema de Taylor:** Se uma função $$f$$ é $$n+1$$ vezes diferenciável em um intervalo em torno de  $$x_{0}$$, então, para todo número real $$x$$ no intervalo, existe um número $$c \in [x, x_{0}]$$ tal que:
@@ -36,7 +37,7 @@ Uma maneira de pensar nesses polinômios de Taylor é como os polinômios tangen
 
 ## Terminologia de convergência
 
-Para um dado problema matemático, suponha que exista uma solução $$u$$. Se usarmos um algoritmo numérico para aproximar-se de $$u$$, obteremos uma solução numérica $$\widetilde{u}$$(é extremamente rara $$u = \widetilde{u}$$). A questão fundamental é: quão perto $$\widetilde{u}$$ está de $$u$$? É nosso trabalho quantificar para essa diferença.
+Para um dado problema matemático, suponha que exista uma solução $$u$$. Se usarmos um algoritmo numérico para aproximar-se de $$u$$, obteremos uma solução numérica $$\widetilde{u}$$(é extremamente rara $$u = \widetilde{u}$$). A questão fundamental é: quão perto $$\widetilde{u}$$ está de $$u$$? É nosso trabalho quantificar essa diferença.
 
 Em muitos casos, o erro em uma aproximação depende de um parâmetro. Por exemplo, no método de Newton, o erro normalmente depende de quantas iterações são executadas. Se tentarmos calcular uma derivada $$ f{}'(x) $$ por $$ \frac{f(x + h) - f(x)}{h} $$  para algum $$h$$, o erro dependerá naturalmente de $$h$$. Portanto, neste caso, queremos quantificar o erro em termos de $$h$$. Ou seja, queremos ser capazes de escrever.
 
