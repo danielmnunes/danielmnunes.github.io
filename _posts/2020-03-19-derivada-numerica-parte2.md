@@ -25,5 +25,5 @@ portanto, conheçemos f apenas nos pontos e não na curva inteira, como no gráf
 
 Queremos calcular $$f{}'(x_{0})$$ apenas com essa informação limitada. Lembrando a definição da derivada é:
 $$
-f{}'(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}
+f{}'(x) = \lim\limits_{h\to 0} \frac{f(x+h) - f(x)}{h}
 $$
