@@ -53,3 +53,11 @@ Agora, fazendo algumas manipulações algebricas temos:
 $$
 \frac{f(x_{i+1}) - f(x_{i})}{h} - f{}'(x_{i}) = \frac{h^{2}f{}''(c)}{2!}
 $$
+
+Observe que o lado esquerdo da igualdade é precisamente a diferença entre a derivada numérica e a derivada real $$f{}'(x_{i})$$. Assim, provamos o seguinte resultado.
+
+__**Teorema:**__ Seja $$f$$ uma função duas vezes diferenciável no intervalo $$[x_{i} x_{i+1}]$$ Então o erro entre a aproximação numérica e $$f{}'(x_{i})$$ é limitado por:
+
+$$
+\lim\limits_{x \to 1} x^{2}
+$$
