@@ -61,3 +61,5 @@ __**Teorema:**__ Seja $$f$$ uma função duas vezes diferenciável no intervalo 
 $$
 \left | \frac{f(x_{i+1}) - f(x_{i})}{h} \right | \leq \frac{h}{2} \underset{x_{i} \leq x \leq x_{i+1}}{max} \left | f{}''(x) \right  | = Ch
 $$
+
+onde $$C$$ é uma constante independente de $$h$$.
