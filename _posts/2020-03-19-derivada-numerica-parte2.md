@@ -59,5 +59,5 @@ Observe que o lado esquerdo da igualdade é precisamente a diferença entre a de
 __**Teorema:**__ Seja $$f$$ uma função duas vezes diferenciável no intervalo $$[x_{i} x_{i+1}]$$ Então o erro entre a aproximação numérica e $$f{}'(x_{i})$$ é limitado por:
 
 $$
-\lim\limits_{x \to 1} x^{2}
+\max\limits_{x \to 1} x^{2}
 $$
