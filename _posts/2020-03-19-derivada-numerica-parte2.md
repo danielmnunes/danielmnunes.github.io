@@ -59,5 +59,5 @@ Observe que o lado esquerdo da igualdade é precisamente a diferença entre a de
 __**Teorema:**__ Seja $$f$$ uma função duas vezes diferenciável no intervalo $$[x_{i} x_{i+1}]$$ Então o erro entre a aproximação numérica e $$f{}'(x_{i})$$ é limitado por:
 
 $$
-\underset{x_{i} \leq x \leq x_{i+1}}{max} x^{2}
+\left | \frac{f(x_{i+1}) - f(x_{i})}{h} \right | \leq \frac{h}{2} \underset{x_{i} \leq x \leq x_{i+1}}{max} \left | f{}''(x) \right  | = Ch
 $$
