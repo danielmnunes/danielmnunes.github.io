@@ -5,7 +5,6 @@ permalink: /posts/chatbot-dialogflow/
 tags: [Chatbot]
 comments: true
 excerpt: "Chatbot"
-mathjax: "true"
 header:
   teaser: "/images/chatbot.jpg"
 ---
