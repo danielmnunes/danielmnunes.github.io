@@ -19,8 +19,8 @@ locale                   : "pt-BR"
 title                    : "Daniel Nunes"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Daniel Nunes"
-description              : "Blog Pessoal | Data Science Portfolio"
+name                     : "Blog Pessoal - Data Science Portfolio"
+description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Daniel Nunes"
   avatar           : "/images/bio-photo.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Blog Pessoal | Data Science Portfolio"
+  bio              : "Blog Pessoal - Data Science Portfolio"
   location         : "Fortaleza, CE"
   email            :
   links:
