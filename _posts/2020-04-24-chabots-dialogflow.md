@@ -1,6 +1,6 @@
 ---
 title: "Construindo um Chatbot com o DialogFlow"
-date: 2020-04-24
+date: 2019-10-24
 permalink: /posts/chatbot-dialogflow/
 tags: [Chatbot]
 comments: true
@@ -21,3 +21,8 @@ Existem muitas ferramentas que propõem a criação de chatbots, hoje eu quero t
 Para começar você precisa ter uma conta no Google e criar uma conta no Dialogflow a partir dela. É só você acessar o Console do Dialogflow, clicar no botão escrito Google e permitir as solicitações. Será apresentado os termos de serviço e outras perguntas, então você deverá concordar com eles.
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/login-df.png){: .align-center}
+
+## Criando um Agente
+Depois de entrar no Console, você tem os seguintes opções. Clique na opção Create Agent, Digite o nome do agente, selecione o idioma português do Brasil e clique no botão Create. No lugar do botão aparecerá o texto Working...
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/criando-agente-df.gif){: .align-center}
