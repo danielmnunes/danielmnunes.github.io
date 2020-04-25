@@ -37,6 +37,8 @@ Intent é um componente que define como o agente vai responder em determinadas s
 - Qual o seu nome?  
 - Você tem um nome?  
 - nome  
+
+
 Na seção Responses adicione a sentença:  
 - Meu nome é Amigo Chatbot  
 
