@@ -60,3 +60,18 @@ Cadastre uma resposta com a mensagem: Top! Eu não sabia que você conhecia $lan
 Quando terminar o cadastro da nova intent, teste algumas vezes com a frase: Eu sei português
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-def3.gif){: .align-center}
+
+Ele reconheceu que "português" é um idioma. Isto significa que nosso chatbot está aprendendo a lidar com diversas formas de interação, sem restrição às mensagens cadastradas. Quanto mais entradas distintas ele receber, melhor ele vai acertar as novas respostas.
+
+## Testando com Web Demo
+Existem várias integrações no DialogFlow, como: Slack, Twitter,Messenger do Facebook, entre outros. Vamos testar nosso chatbot online, para isso na aba Integrations habilite o item Web Demo, depois clique no link gerado.
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/weddemo.gif){: .align-center}
+
+Uma nova aba será aberta em seu navegador, e seu chatbot terá uma cara de chat, vamos testa-lo:
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/final-teste-df.gif){: .align-center}
+
+Espero que você tenha gostado do Dialogflow e que tenha conseguido aplicar as práticas que apresentei. Esse tutorial foi criado a partir do texto origina na [**documentação**](https://dialogflow.com/docs). Lá tem explicações muito mais detalhadas e mais funções que podem ser criadas utilizando esta poderosa ferramenta.
+
+Até a próxima :v:
