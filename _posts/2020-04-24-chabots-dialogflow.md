@@ -23,7 +23,7 @@ Para começar você precisa ter uma conta no Google e criar uma conta no Dialogf
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/login-df.png){: .align-center}
 
 ## Criando um Agente
-Depois de entrar no Console, você tem os seguintes opções. Clique na opção Create Agent, Digite o nome do agente, selecione o idioma português do Brasil e clique no botão Create. No lugar do botão aparecerá o texto Working...
+Depois de entrar no Console, você tem as seguintes opções. Clique na opção Create Agent, Digite o nome do agente, selecione o idioma português do Brasil e clique no botão Create. No lugar do botão aparecerá o texto Working...
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/criando-agente-df.gif){: .align-center}
 
@@ -74,6 +74,6 @@ Uma nova aba será aberta em seu navegador, e seu chatbot terá uma cara de chat
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/final-teste-df.gif){: .align-center}
 
-Espero que você tenha gostado do Dialogflow e que tenha conseguido aplicar as práticas que apresentei. Esse tutorial foi criado a partir do texto origina na [**documentação**](https://dialogflow.com/docs). Lá tem explicações muito mais detalhadas e mais funções que podem ser criadas utilizando esta poderosa ferramenta.
+Espero que você tenha gostado do Dialogflow e que tenha conseguido aplicar as práticas que apresentei. Esse tutorial foi criado a partir do texto original na [**documentação**](https://dialogflow.com/docs). Lá tem explicações muito mais detalhadas e mais funções que podem ser criadas utilizando esta poderosa ferramenta.
 
 Até a próxima :v:
