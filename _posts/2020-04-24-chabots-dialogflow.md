@@ -26,3 +26,7 @@ Para começar você precisa ter uma conta no Google e criar uma conta no Dialogf
 Depois de entrar no Console, você tem os seguintes opções. Clique na opção Create Agent, Digite o nome do agente, selecione o idioma português do Brasil e clique no botão Create. No lugar do botão aparecerá o texto Working...
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/criando-agente-df.gif){: .align-center}
+
+Já temos um agente criado. Vamos configurá-lo! Inicialmente, os agentes tem duas **intents**, que são **Default Fallback Intent** para quando ele não compreende o que o usuário disse, e **Default Welcome Intent** para saudar o usuário em sua primeira mensagem. Vamos testar nosso chatbot.
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-df.gif){: .align-center}
