@@ -30,3 +30,33 @@ Depois de entrar no Console, você tem os seguintes opções. Clique na opção 
 Já temos um agente criado. Vamos configurá-lo! Inicialmente, os agentes tem duas **intents**, que são **Default Fallback Intent** para quando ele não compreende o que o usuário disse, e **Default Welcome Intent** para saudar o usuário em sua primeira mensagem. Vamos testar nosso chatbot.
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-df.gif){: .align-center}
+
+## Criando uma Intent
+
+Intent é um componente que define como o agente vai responder em determinadas situações. Clique no botão Create Intent, adicione o nome “nome” no campo Intent name. Na seção Training phrases, adicione as seguintes sentenças:  
+- Qual o seu nome?  
+- Você tem um nome?  
+- nome  
+Na seção Responses adicione a sentença:  
+- Meu nome é Amigo Chatbot  
+
+Clique no botão Save.
+
+## Testando nosso chatbot
+Chegou a hora de testar nosso chatbot! No lado direito do Console tem uma opção Try it now.
+![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-df2.gif){: .align-center}
+
+## Definindo parâmetros com Entities  
+Entities é um componente que defini um atributo de uma sentença que nosso Chatbot entende. Crie uma nova intent chamada “Idiomas” com as seguintes frases de treinamento:  
+- Eu sei inglês  
+- Eu falo francês  
+- Eu sei escrever em alemão  
+
+Para cada idioma, selecione-o e indique a variável @sys.language.
+![image-center]({{ site.url }}{{ site.baseurl }}/images/param-df.png){: .align-center}
+
+Cadastre uma resposta com a mensagem: Top! Eu não sabia que você conhecia $language !! e clique no botão Save.
+
+Quando terminar o cadastro da nova intent, teste algumas vezes com a frase: Eu sei português
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-df3.gif){: .align-center}
