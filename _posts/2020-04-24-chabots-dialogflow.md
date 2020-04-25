@@ -66,7 +66,7 @@ Ele reconheceu que "português" é um idioma. Isto significa que nosso chatbot e
 ## Testando com Web Demo
 Existem várias integrações no DialogFlow, como: Slack, Twitter,Messenger do Facebook, entre outros. Vamos testar nosso chatbot online, para isso na aba Integrations habilite o item Web Demo, depois clique no link gerado.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/images/weddemo.gif){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/images/webdemo.gif){: .align-center}
 
 Uma nova aba será aberta em seu navegador, e seu chatbot terá uma cara de chat, vamos testa-lo:
 
