@@ -59,4 +59,4 @@ Cadastre uma resposta com a mensagem: Top! Eu não sabia que você conhecia $lan
 
 Quando terminar o cadastro da nova intent, teste algumas vezes com a frase: Eu sei português
 
-![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-df3.gif){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/images/teste-def3.gif){: .align-center}
