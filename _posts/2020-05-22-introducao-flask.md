@@ -21,16 +21,16 @@ O Flask é uma ferramenta que foi desenvolvida em 01 de abril de 2010. Ela é mu
 ### Instalando o Flask  
 Assumo que você tenha instalado a linguagem python em sua máquina, caso contrário veja [**aqui**]({{ "/posts/install-python/" | relative_url }}) como instalar.  
 
-Flask é uma lib do Python e como qualquer outra precisa	ser	instalado para funcionar. Rode o comando a seguir para instalar o Flask em seu [**virtualenv**](https://virtualenv.pypa.io/en/latest/).
+Flask é uma lib do Python e como qualquer outra precisa	ser	instalada para funcionar. Rode o comando a seguir para instalar o Flask em seu [**virtualenv**](https://virtualenv.pypa.io/en/latest/).
 ```
 pip install flask
 ```
 ### Escrevendo o código da aplicação  
-Agora em um editor de código ou IDE de sua preferência(sugiro o [**vs code**](https://code.visualstudio.com/)), crie um arquivo python chamado *hello.py*. Vamos iniciar importando a classe Flask.
+Agora em um editor de código ou IDE de sua preferência(sugiro o [**vs code**](https://code.visualstudio.com/)), crie um arquivo python chamado *hello.py* e dentro dele vamos iniciar importando a classe Flask.
 ```python
 from flask import Flask
 ```
-O próximo passo é criar uma instância de Flask, setando seu nome com a variável especial *\_\_name\_\_* e atribuindo e variável *app*.
+O próximo passo é criar uma instância de Flask, setando seu nome com a variável especial *\_\_name\_\_* e atribuindo a variável *app*.
 ```python
 app = Flask(__name__)
 ```
@@ -60,7 +60,7 @@ def index():
 app.run()
 ```
 ### Executando a aplicação  
-Vamos então vê com ficou, para isso basta executar nosso arquivo *hello.py*, em um terminal no mesmo diretório digite.
+Vamos então vê com ficou, para isso basta executar nosso arquivo *hello.py*, em um terminal no mesmo diretório, digite.
 ```
 python hello.py
 ```
@@ -74,7 +74,6 @@ Se tudo ocorrer bem você receberá no terminal algo próximo de.
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 Nossa aplicação já está funcionando, para visualizar abra o endereço recebido no terminal em um navegador(espero que você não utilize o I.E.)  
-
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/flask-intro.PNG){: .align-center}
 
