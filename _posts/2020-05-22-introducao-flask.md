@@ -1,5 +1,5 @@
 ---
-title: "Criando primeira aplicação flask"
+title: "Criando a primeira aplicação flask"
 date: 2020-05-22
 permalink: /posts/introducao-flask/
 tags: [python, flask]
