@@ -1,6 +1,6 @@
 ---
 title: "Criando primeira aplicação flask"
-date: 2019-10-24
+date: 2020-05-22
 permalink: /posts/introducao-flask/
 tags: [python, flask]
 comments: true
