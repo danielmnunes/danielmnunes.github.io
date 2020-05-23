@@ -73,5 +73,7 @@ Se tudo ocorrer bem você receberá no terminal algo próximo de.
 * Debug mode: off
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
-Nossa aplicação já está funcionando, para visualizar abra o endereço recebido no terminal em um navegador(espero que você não utilize o I.E.)
+Nossa aplicação já está funcionando, para visualizar abra o endereço recebido no terminal em um navegador(espero que você não utilize o I.E.)  
+
+
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/flask-intro.PNG){: .align-center}
