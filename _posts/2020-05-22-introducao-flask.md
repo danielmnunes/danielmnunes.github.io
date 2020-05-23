@@ -30,4 +30,4 @@ Agora em um editor de código ou IDE de sua preferência(sugiro o [**vs code**](
 ```python
 from flask import Flask
 ```
-Agora precisamos criar uma intancia de Flask, setando seu nome com a variável especial *__name__*
+Agora precisamos criar uma intancia de Flask, setando seu nome com a variável especial *\_\_name\_\_*
