@@ -30,4 +30,15 @@ Agora em um editor de código ou IDE de sua preferência(sugiro o [**vs code**](
 ```python
 from flask import Flask
 ```
-Agora precisamos criar uma intancia de Flask, setando seu nome com a variável especial *\_\_name\_\_*
+O próximo passo é criar uma instância de Flask, setando seu nome com a variável especial *\_\_name\_\_* e atribuindo e variável *app*.
+```python
+app = Flask(__name__)
+```
+Agora precisamos dizer para o flask o que ele deve fazer quando alguém acessar a  página inicial da nossa aplicação, faremos isso definindo uma função python e inserindo um decorador *route* com caminho raiz da aplicação, ou seja, *’/’*.
+```python
+@app.route('/')
+def index():
+    return '<h1> Olá Mundo!! </h1>'
+```
+A função *index* retorna apenas uma string com um cabeçalho h1 do html.
+
