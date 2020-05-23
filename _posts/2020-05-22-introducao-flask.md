@@ -77,3 +77,8 @@ Nossa aplicação já está funcionando, para visualizar abra o endereço recebi
 
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/flask-intro.PNG){: .align-center}
+
+### Conclusão
+Nesse artigo vimos o que é flask, como instalá-lo e como podemos criar uma aplicação web, mostrando um pouco do seu poder e simplicidade.
+
+Bom espero que você tenha gostado e que compartilhe esse conteúdo com mais pessoas, caso tenha alguma dúvida deixe nos comentários que te respondo o mais rápido possível.
