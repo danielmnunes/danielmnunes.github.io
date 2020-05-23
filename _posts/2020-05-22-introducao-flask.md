@@ -25,3 +25,8 @@ Flask é uma lib do Python e como qualquer outra precisa	ser	instalado para func
 ```
 pip install flask
 ```
+### Escrevendo o código da aplicação  
+Agora em um editor de código ou IDE de sua preferência(sugiro o [**vs code**](https://code.visualstudio.com/)), crie um arquivo python chamado *hello.py*. Vamos iniciar importando a classe Flask.
+```python
+from flask import Flask
+```
