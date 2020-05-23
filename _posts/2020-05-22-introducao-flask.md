@@ -42,3 +42,36 @@ def index():
 ```
 A função *index* retorna apenas uma string com um cabeçalho h1 do html.
 
+Nosso último passo é colocar nossa aplicação no ar, para isso utilizaremos a método *run* da nossa instância flask *app*.
+```python
+app.run()
+```
+
+Nosso arquivo *hello.py* ficou assim:
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '<h1> Olá Mundo!! </h1>'
+
+app.run()
+```
+### Executando a aplicação  
+Vamos então vê com ficou, para isso basta executar nosso arquivo *hello.py*, em um terminal no mesmo diretório digite.
+```
+python hello.py
+```
+Se tudo ocorrer bem você receberá no terminal algo próximo de.
+```
+* Serving Flask app "hello" (lazy loading)
+* Environment: production
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.
+* Debug mode: off
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+Nossa aplicação já está funcionando, para visualizar abra o endereço recebido no terminal em um navegador(espero que você não utilize o I.E.)
+![image-center]({{ site.url }}{{ site.baseurl }}/images/flask-intro.png){: .align-center}
