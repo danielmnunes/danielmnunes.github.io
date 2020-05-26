@@ -60,7 +60,7 @@ def index():
 app.run()
 ```
 ### Executando a aplicação  
-Vamos então vê com ficou, para isso basta executar nosso arquivo *hello.py*, em um terminal no mesmo diretório, digite.
+Vamos então vê como ficou, para isso basta executar nosso arquivo *hello.py*, em um terminal no mesmo diretório, digite.
 ```
 python hello.py
 ```
@@ -80,4 +80,4 @@ Nossa aplicação já está funcionando, para visualizar abra o endereço recebi
 ### Conclusão
 Nesse artigo vimos o que é flask, como instalá-lo e como podemos criar uma aplicação web, mostrando um pouco do seu poder e simplicidade.
 
-Bom espero que você tenha gostado e que compartilhe esse conteúdo com mais pessoas, caso tenha alguma dúvida deixe nos comentários que te respondo o mais rápido possível.
+Bom, espero que você tenha gostado e que compartilhe esse conteúdo com mais pessoas, caso tenha alguma dúvida deixe nos comentários que te respondo o mais rápido possível.
