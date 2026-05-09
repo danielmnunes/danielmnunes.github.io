@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # permite disparar o deploy manualmente pela UI do GitHub
+
+# Garante que apenas um deploy rode por vez.
+# cancel-in-progress: false → um push novo não cancela um deploy em andamento.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ─────────────────────────────────────────────
+# JOB 1: Build
+# ─────────────────────────────────────────────
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # Cache do global store do Bun (~/.bun/install/cache).
+      # Recomendação oficial dos mantenedores: NÃO cachear node_modules,
+      # pois pode causar resolução incorreta de dependências.
+      # O bun install já é muito rápido por si só.
+      - name: Cache Bun store
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      # --frozen-lockfile → equivalente ao `npm ci`:
+      # falha se o bun.lock estiver desatualizado em relação ao package.json.
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Executa o script "build" do package.json:
+      # bun run --parallel type-check build-only
+      # (vue-tsc e vite build rodam em paralelo)
+      - name: Type check & Build
+        run: bun run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  # ─────────────────────────────────────────────
+  # JOB 2: Deploy
+  # ─────────────────────────────────────────────
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    # Registra o ambiente no GitHub e exibe a URL do site após o deploy.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
