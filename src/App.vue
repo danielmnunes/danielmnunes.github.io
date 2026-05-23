@@ -23,8 +23,9 @@ import '@/composables/useTheme'
   --darker-alt-bg: #cccccc;
   --alt-fg: #000000;
   --link: #1565c0;
-  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-    Cantarell, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-ui:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', Helvetica, sans-serif;
   --font-mono: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
   --transition: 200ms ease;
   --header-h: 54px;
@@ -59,7 +60,9 @@ body {
   font-family: var(--font-ui);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color var(--transition), color var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 a {
@@ -77,6 +80,4 @@ a:hover {
   margin: 0 auto;
   padding: 0 1.75rem;
 }
-
-
 </style>

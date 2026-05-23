@@ -5,9 +5,7 @@ const year = new Date().getFullYear()
 <template>
   <footer>
     <div class="container footer-inner">
-      <p>
-        <span class="name">Daniel Nunes</span> &copy; {{ year }}
-      </p>
+      <p><span class="name">Daniel Nunes</span> &copy; {{ year }}</p>
       <p class="built-with">
         Built with
         <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">Vue 3</a>
