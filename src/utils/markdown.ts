@@ -2,7 +2,7 @@ import MarkdownIt from 'markdown-it'
 import { createHighlighterCore, type HighlighterCore } from 'shiki/core'
 import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
 
-const SUPPORTED_LANGS = ['ts', 'js', 'vue', 'bash', 'json', 'md'] as const
+const SUPPORTED_LANGS = ['ts', 'js', 'vue', 'bash', 'json', 'md', 'java'] as const
 
 let highlighterPromise: Promise<HighlighterCore> | null = null
 
@@ -17,6 +17,7 @@ async function getHighlighter(): Promise<HighlighterCore> {
         import('shiki/langs/bash.mjs'),
         import('shiki/langs/json.mjs'),
         import('shiki/langs/md.mjs'),
+        import('shiki/langs/java.mjs'),
       ],
       engine: createOnigurumaEngine(() => import('shiki/wasm')),
     })
