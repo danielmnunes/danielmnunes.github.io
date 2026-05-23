@@ -73,10 +73,10 @@ header {
 }
 
 .nav {
-  margin-right: auto;
-  margin-left: 1.5rem;
+  margin-left: auto;
   display: flex;
   gap: 1.25rem;
+  align-items: center;
 }
 
 .nav-link {
