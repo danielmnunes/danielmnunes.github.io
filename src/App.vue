@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
-import HeroSection from '@/components/HeroSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
 
 import '@/composables/useTheme'
@@ -9,7 +9,7 @@ import '@/composables/useTheme'
 <template>
   <AppHeader />
   <main>
-    <HeroSection />
+    <RouterView />
   </main>
   <AppFooter />
 </template>

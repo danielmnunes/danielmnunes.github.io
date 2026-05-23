@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import { useTheme } from '@/composables/useTheme'
 
 const { isDark, toggle } = useTheme()
@@ -7,7 +8,10 @@ const { isDark, toggle } = useTheme()
 <template>
   <header>
     <div class="container header-inner">
-      <a href="#" class="brand">{dn.}</a>
+      <RouterLink to="/" class="brand">{dn.}</RouterLink>
+      <nav class="nav">
+        <RouterLink to="/blog" class="nav-link">blog</RouterLink>
+      </nav>
       <button
         class="theme-toggle"
         :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
@@ -65,8 +69,32 @@ header {
   font-size: 1.25rem;
   color: var(--link);
   text-decoration: none;
-  margin-right: auto;
   letter-spacing: -0.5px;
+}
+
+.nav {
+  margin-right: auto;
+  margin-left: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--fg);
+  opacity: 0.7;
+  text-decoration: none;
+  transition:
+    opacity var(--transition),
+    color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: var(--link);
+  opacity: 1;
+  text-decoration: none;
 }
 
 .theme-toggle {
