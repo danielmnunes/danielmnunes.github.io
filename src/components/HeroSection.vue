@@ -7,7 +7,7 @@ interface SocialLink {
 
 const socials: SocialLink[] = [
   { name: 'GitHub', href: 'https://github.com/danielmnunes', icon: 'github' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/danielmnunes', icon: 'linkedin' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-nunes-dev', icon: 'linkedin' },
 ]
 </script>
 
