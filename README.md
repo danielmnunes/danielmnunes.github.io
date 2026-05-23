@@ -1,48 +1,75 @@
-# .
+# danielmnunes.github.io
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal portfolio of **Daniel Nunes** — Backend Software Engineer · AI-Native.
 
-## Recommended IDE Setup
+Live at **[danielmnunes.github.io](https://danielmnunes.github.io)**
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| Layer | Tech |
+|---|---|
+| Framework | [Vue 3](https://vuejs.org/) — Composition API, `<script setup lang="ts">` |
+| Build | [Vite 8](https://vite.dev/) |
+| Language | TypeScript |
+| Package manager | [Bun](https://bun.sh/) |
+| Lint | [oxlint](https://oxc.rs/docs/guide/usage/linter) + [ESLint](https://eslint.org/) |
+| Format | [oxfmt](https://github.com/nicolo-ribaudo/oxfmt) |
 
-## Type Support for `.vue` Imports in TS
+## Design System
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Colors, typography and icon references follow the **[Hugo Coder](https://github.com/luizdepra/hugo-coder)** theme (`sd.md`).
 
-## Customize configuration
+CSS custom properties defined in `src/App.vue`:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+```css
+:root {
+  --bg: #fafafa;       /* light background */
+  --fg: #212121;       /* light foreground */
+  --link: #1565c0;     /* accent / links   */
+  --header-h: 54px;    /* used in hero calc */
+  --footer-h: 49px;
+}
+html.dark {
+  --bg: #212121;
+  --fg: #dadada;
+  --link: #42a5f5;
+}
+```
 
-## Project Setup
+## Project Structure
+
+```
+src/
+├── composables/
+│   └── useTheme.ts          # dark/light toggle — singleton, persists to localStorage
+├── components/
+│   ├── AppHeader.vue        # sticky header with {dn.} brand + theme toggle
+│   ├── HeroSection.vue      # name, role, bio, social links, CV download
+│   └── AppFooter.vue        # copyright + built-with
+└── App.vue                  # global CSS tokens + layout composition
+```
+
+## Getting Started
 
 ```sh
 bun install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
-bun dev
+bun dev          # dev server at http://localhost:5173
+bun run build    # type-check + production build
+bun lint         # oxlint + eslint
 ```
 
-### Type-Check, Compile and Minify for Production
+## Features
 
-```sh
-bun run build
-```
+- Dark / light mode with `prefers-color-scheme` detection and `localStorage` persistence
+- Inline SVG icons — no external icon library
+- SVG favicon (`{dn.}`) embedded as data URI — no cache issues
+- System font stack — zero web font requests
 
-### Lint with [ESLint](https://eslint.org/)
+## License
 
-```sh
-bun lint
-```
+MIT
