@@ -39,7 +39,7 @@ A solução: gerar tudo a partir do Protobuf.
 
 Um método gRPC como este:
 
-```protobuf
+```proto
 service Oblique {
   // Fetch a user by name, or using the alias "users/me" to return the currently
   // authenticated user.
