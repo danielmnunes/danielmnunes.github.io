@@ -193,6 +193,15 @@ watchEffect(async () => {
   background-color: var(--alt-bg) !important;
 }
 
+html:not(.dark) .post-content :deep(.shiki),
+html:not(.dark) .post-content :deep(.shiki span) {
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+  font-style: var(--shiki-light-font-style) !important;
+  font-weight: var(--shiki-light-font-weight) !important;
+  text-decoration: var(--shiki-light-text-decoration) !important;
+}
+
 html.dark .post-content :deep(.shiki),
 html.dark .post-content :deep(.shiki span) {
   color: var(--shiki-dark) !important;
