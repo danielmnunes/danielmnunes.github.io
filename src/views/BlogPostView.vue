@@ -221,4 +221,31 @@ html.dark .post-content :deep(.shiki span) {
   max-width: 100%;
   border-radius: 6px;
 }
+
+.post-content :deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.post-content :deep(th),
+.post-content :deep(td) {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--alt-bg);
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-content :deep(thead th) {
+  background-color: var(--alt-bg);
+  font-weight: 700;
+  color: var(--alt-fg);
+}
+
+.post-content :deep(tbody tr:nth-child(even)) {
+  background-color: var(--alt-bg);
+  opacity: 0.5;
+}
 </style>
