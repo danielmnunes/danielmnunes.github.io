@@ -1,240 +1,266 @@
 ---
-title: "Gerando um servidor MCP em Go com Protobuf"
-description: "Veja como a Oblique Security gerou um servidor MCP automaticamente a partir de definições Protobuf, mantendo descrições de ferramentas precisas e um loop de avaliação eficiente para depurar o comportamento dos agentes."
-date: 2026-05-30
-tags: ["go", "mcp", "protobuf", "grpc", "ai-agents", "llm"]
+title: "Introdução ao MCP em Go: construindo seu primeiro servidor"
+description: "Aprenda o que é o Model Context Protocol, como ele funciona e como criar um servidor MCP em Go com o SDK oficial, expondo tools, resources e prompts para agentes de IA."
+date: 2026-06-05
+tags: ["go", "mcp", "ai-agents", "llm", "tutorial"]
 ---
 
-# Gerando um servidor MCP em Go com Protobuf
+# Introdução ao MCP em Go: construindo seu primeiro servidor
 
-MCP (Model Context Protocol) virou pré-requisito para qualquer produto que queira ser acessível a agentes de IA. Mas implementar um servidor MCP manualmente levanta um problema clássico: como garantir que as descrições das ferramentas se mantêm precisas conforme a API evolui?
+Agentes de IA precisam de contexto. Precisam consultar APIs, ler arquivos, executar buscas, chamar bancos de dados. O problema é que cada integração era feita de forma ad hoc: um plugin para cá, um wrapper para lá, sem padronização alguma.
 
-Este post explora a abordagem da [Oblique Security](https://oblique.security/blog/mcp/), que resolveu isso gerando o servidor MCP automaticamente a partir das definições Protobuf. Veremos o raciocínio por trás dessa decisão, os detalhes técnicos da implementação e como eles constroem um sistema de avaliação para depurar o comportamento dos agentes.
+O **Model Context Protocol (MCP)** surgiu para resolver isso. É um protocolo aberto, criado pela Anthropic, que define como aplicações de IA se comunicam com servidores que expõem capacidades externas. Pense nele como uma "porta USB" para agentes: qualquer ferramenta que implemente o protocolo funciona com qualquer cliente compatível.
 
----
+Neste post, você vai entender o que é o MCP, como ele funciona por baixo e como criar um servidor funcional em Go usando o SDK oficial.
 
-## Por que MCP e não outra coisa?
+## O que é MCP, afinal?
 
-Existem muitas formas de expor capacidades a um agente: ferramentas de linha de comando, interfaces SQL, transpilação para TypeScript. Cada alternativa tem seus defensores.
+MCP define uma interface padronizada entre três atores:
 
-Mas MCP tem uma vantagem que as outras não têm: é o denominador comum para agentes autônomos externos. Se você quer expor dados para o workflow de um cliente, precisa falar MCP. Plataformas como Claude Code e Codex Automations esperam essa interface.
+- **Host**: a aplicação que usa um LLM (Claude Desktop, Cursor, sua própria app)
+- **Client**: o componente dentro do host que fala MCP
+- **Server**: um processo separado que expõe capacidades ao client
 
-O ponto central não é o protocolo em si. É o que qualquer protocolo exige: manter a documentação das interfaces atualizada. Para MCP, isso significa descrições de ferramentas e schemas de entrada precisos.
+O servidor MCP não é o LLM. Ele é o processo que você escreve para expor suas ferramentas. O LLM, via client, descobre o que o servidor oferece e decide quando e como usar.
 
----
+A comunicação usa JSON-RPC 2.0. O transporte padrão local é `stdio` (stdin/stdout). Para uso remoto, existe o transporte HTTP com Server-Sent Events (SSE) e o mais recente Streamable HTTP.
 
-## O problema com documentação manual
+## Os três primitivos do MCP
 
-A Oblique tem uma regra: tudo que o usuário pode fazer na UI deve ser possível via Terraform, REST e MCP. Eles já geram bindings a partir da interface gRPC, então a pergunta foi natural: por que não gerar o servidor MCP também?
+Todo servidor MCP pode expor três tipos de capacidades:
 
-A alternativa, escrever as descrições manualmente, cria drift. Um campo novo na API não atualiza automaticamente a descrição da ferramenta MCP. Um enum sem documentação confunde o modelo. Eles chegaram a ter um bug onde valores de enum estavam comentados, mas os valores em si não apareciam no schema gerado.
+**Tools** são funções que o agente pode chamar. Recebem argumentos, executam lógica e retornam um resultado. São o equivalente a "ações": buscar clima, criar um arquivo, consultar um banco.
 
-A solução: gerar tudo a partir do Protobuf.
+**Resources** são dados identificados por URI que o agente pode ler. Pense em arquivos, registros de banco, resultados de API. O agente lê, não modifica.
 
----
+**Prompts** são templates de mensagem que o servidor disponibiliza. Permitem padronizar como o agente deve formular certas perguntas ou instruções.
 
-## Como funciona a geração
+Na prática, a maioria dos servidores MCP começa expondo apenas tools. Resources e prompts são úteis em cenários mais avançados.
 
-### Do .proto ao tool definition
+## Instalando o SDK oficial de Go
 
-Um método gRPC como este:
+O SDK oficial é mantido pela Anthropic em colaboração com o Google:
 
-```proto
-service Oblique {
-  // Fetch a user by name, or using the alias "users/me" to return the currently
-  // authenticated user.
-  rpc GetUser(GetUserRequest) returns (User) {
-    option (google.api.http) = {get: "/api/v1/{name=users/*}"};
-  }
+```bash
+go get github.com/modelcontextprotocol/go-sdk
+```
+
+Com o módulo instalado, você já tem tudo para criar servidor e cliente.
+
+## Criando um servidor MCP simples
+
+Vamos criar um servidor que expõe uma única tool: cumprimentar alguém pelo nome.
+
+```go
+package main
+
+import (
+    "context"
+    "log"
+
+    "github.com/modelcontextprotocol/go-sdk/mcp"
+)
+
+// Input define os argumentos da tool.
+// A tag jsonschema vira a descrição no schema gerado automaticamente.
+type Input struct {
+    Name string `json:"name" jsonschema:"o nome da pessoa a cumprimentar"`
 }
 
-message GetUserRequest {
-  // Name of the user of the format "users/{id}". The alias "users/me" is also
-  // supported and resolves to the currently authenticated user.
-  string name = 1 [
-    (google.api.field_behavior) = REQUIRED
-  ];
+// Output define o retorno estruturado da tool.
+type Output struct {
+    Greeting string `json:"greeting" jsonschema:"a saudação gerada"`
+}
+
+// SayHi é o handler da tool. Recebe o contexto, a requisição e o input tipado.
+func SayHi(ctx context.Context, req *mcp.CallToolRequest, input Input) (
+    *mcp.CallToolResult,
+    Output,
+    error,
+) {
+    return nil, Output{Greeting: "Olá, " + input.Name + "!"}, nil
+}
+
+func main() {
+    // Cria o servidor com nome e versão
+    server := mcp.NewServer(&mcp.Implementation{
+        Name:    "greeter",
+        Version: "v1.0.0",
+    }, nil)
+
+    // Registra a tool "greet" com seu handler
+    mcp.AddTool(server, &mcp.Tool{
+        Name:        "greet",
+        Description: "Cumprimenta uma pessoa pelo nome",
+    }, SayHi)
+
+    // Sobe o servidor via stdio — o cliente fala pelo stdin/stdout
+    if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
+        log.Fatal(err)
+    }
 }
 ```
 
-Gera automaticamente um JSON de definição de ferramenta com nome, descrição, `inputSchema` e `outputSchema` completos, incluindo campos obrigatórios e descrições dos campos.
+Três coisas acontecem aqui que valem destaque:
 
-### O problema dos comentários
+O `mcp.AddTool` usa generics para inferir automaticamente o JSON Schema dos tipos `Input` e `Output`. Você não precisa escrever o schema na mão: as struct tags `jsonschema` viram as descrições dos campos.
 
-Comentários de código-fonte não sobrevivem à compilação do proto plugin do Go. Eles ficam disponíveis apenas no arquivo `.proto` original, não nos arquivos `.pb.go` gerados.
+O handler recebe um `Input` já desserializado e validado. O SDK cuida de extrair os argumentos JSON da requisição, validar contra o schema e passar o struct pronto para você.
 
-A solução é gerar um **descriptor file** (um arquivo binário que representa o proto compilado) e embutí-lo no servidor Go com `//go:embed`:
+O transporte `stdio` significa que esse servidor roda como um processo filho. O cliente o inicia, se comunica pelo stdin/stdout e termina quando o client desconecta.
+
+## Como o cliente se conecta
+
+Para testar o servidor programaticamente, você pode criar um cliente em Go:
 
 ```go
-//go:embed descriptor_set.binpb
-var descriptor []byte
+package main
 
-var descriptorFiles *protoregistry.Files
+import (
+    "context"
+    "log"
+    "os/exec"
 
-func init() {
-    opts := protodesc.FileOptions{AllowUnresolvable: true}
-    set := &descriptorpb.FileDescriptorSet{}
-    if err := proto.Unmarshal(descriptor, set); err != nil {
-        panic("parsing descriptor: " + err.Error())
+    "github.com/modelcontextprotocol/go-sdk/mcp"
+)
+
+func main() {
+    ctx := context.Background()
+
+    client := mcp.NewClient(&mcp.Implementation{
+        Name:    "mcp-client",
+        Version: "v1.0.0",
+    }, nil)
+
+    // Conecta ao servidor iniciando o binário como subprocesso
+    transport := &mcp.CommandTransport{
+        Command: exec.Command("./greeter"),
     }
-    files, err := opts.NewFiles(set)
+
+    session, err := client.Connect(ctx, transport, nil)
     if err != nil {
-        panic("resolving files: " + err.Error())
+        log.Fatal(err)
     }
-    descriptorFiles = files
+    defer session.Close()
+
+    // Chama a tool "greet"
+    res, err := session.CallTool(ctx, &mcp.CallToolParams{
+        Name:      "greet",
+        Arguments: map[string]any{"name": "Daniel"},
+    })
+    if err != nil {
+        log.Fatalf("CallTool falhou: %v", err)
+    }
+
+    for _, c := range res.Content {
+        log.Print(c.(*mcp.TextContent).Text)
+    }
 }
 ```
 
-Com isso, o pacote `protodesc` permite acessar os comentários ao percorrer os descritores de mensagem. O pacote `protoreflect` faz a travessia dos campos.
+O fluxo é simples: crie um `Client`, conecte usando um transporte e chame ferramentas com `CallTool`. O `CommandTransport` inicia o servidor como subprocesso e gerencia o ciclo de vida automaticamente.
 
-### Criando a definição da ferramenta
+## Expondo Resources
 
-O código de geração percorre os descritores de método e produz um `*mcp.Tool` para o Go MCP SDK:
+Resources são dados identificados por URI. O padrão é que o agente possa listá-los e lê-los:
 
 ```go
-func newTool(md protoreflect.MethodDescriptor) (*mcp.Tool, error) {
-    desc, err := descriptorFiles.FindDescriptorByName(fullName)
-    // ...
-    description := desc.ParentFile().SourceLocations().ByDescriptor(desc).LeadingComments
+resources := map[string]string{
+    "file:///config.yaml": "timeout: 30\nretries: 3",
+    "file:///readme.md":   "# Meu projeto\nDescrição aqui.",
+}
 
-    isDestructive := strings.HasPrefix(string(md.Name()), "Delete")
-    isReadOnly := false
-    for _, p := range []string{"Get", "List", "BatchGet"} {
-        if isReadOnly = strings.HasPrefix(string(md.Name()), p); isReadOnly {
-            break
-        }
+handler := func(ctx context.Context, req *mcp.ReadResourceRequest) (*mcp.ReadResourceResult, error) {
+    uri := req.Params.URI
+    content, ok := resources[uri]
+    if !ok {
+        return nil, mcp.ResourceNotFoundError(uri)
     }
+    return &mcp.ReadResourceResult{
+        Contents: []*mcp.ResourceContents{{URI: uri, Text: content}},
+    }, nil
+}
 
-    return &mcp.Tool{
-        Name:        string(md.Name()),
-        Description: description,
-        InputSchema: inputSchema,
-        OutputSchema: outputSchema,
-        Annotations: &mcp.ToolAnnotations{
-            DestructiveHint: &isDestructive,
-            ReadOnlyHint:    isReadOnly,
+server.AddResource(&mcp.Resource{URI: "file:///config.yaml"}, handler)
+server.AddResource(&mcp.Resource{URI: "file:///readme.md"}, handler)
+```
+
+Você também pode registrar **resource templates** com padrões de URI para cobrir coleções inteiras. O template `file:///docs/{filename}` serviria qualquer arquivo dentro de `docs/`, por exemplo.
+
+## Expondo Prompts
+
+Prompts são templates que o cliente pode listar e expandir com argumentos:
+
+```go
+promptHandler := func(ctx context.Context, req *mcp.GetPromptRequest) (*mcp.GetPromptResult, error) {
+    nome := req.Params.Arguments["nome"]
+    return &mcp.GetPromptResult{
+        Description: "Template de revisão de código",
+        Messages: []*mcp.PromptMessage{
+            {
+                Role: "user",
+                Content: &mcp.TextContent{
+                    Text: "Revise o seguinte código de " + nome + " e aponte problemas de legibilidade:",
+                },
+            },
         },
     }, nil
 }
+
+server.AddPrompt(&mcp.Prompt{
+    Name: "code-review",
+    Arguments: []*mcp.PromptArgument{
+        {Name: "nome", Description: "nome do autor do código", Required: true},
+    },
+}, promptHandler)
 ```
 
-Note como as anotações `ReadOnlyHint` e `DestructiveHint` são derivadas do próprio nome do método, sem necessidade de configuração manual.
+## Usando com Claude Desktop ou Cursor
 
----
-
-## Filtrando o output para economizar tokens
-
-A resposta completa da REST API de um usuário tem 185 tokens. A versão enviada pelo MCP tem 97. Metade.
-
-Campos como `createTime`, `updateTime` e outros metadados raramente são relevantes para um agente. O gerador usa `protoreflect` para limpar esses campos antes de retornar a resposta. O resultado é uma resposta mais limpa, mais barata e que direciona melhor o modelo para o que importa.
-
-Esse tipo de otimização faz diferença em chamadas longas onde múltiplas ferramentas são invocadas em sequência.
-
----
-
-## Avaliando o comportamento do agente
-
-A parte mais interessante do post é o sistema de avaliação que eles construíram para depurar problemas.
-
-O report mais comum de bug era: *"o modelo está confuso com X."* Sem um sistema de avaliação, identificar a causa raiz é um trabalho lento e manual.
-
-### Modo stdio para desenvolvimento
-
-O servidor MCP roda em modo `stdio` durante os testes, o que permite invocar o Claude Code de forma programática:
-
-```bash
-claude -p "$PROMPT" \
-    --mcp-config "$MCP_CONFIG" \
-    --append-system-prompt-file "$SYSTEM_PROMPT" \
-    --strict-mcp-config \
-    --mcp-debug \
-    --permission-mode dontAsk \
-    --allowedTools mcp__oblique \
-    --output-format stream-json
-```
-
-O formato `stream-json` do Claude Code emite eventos detalhados sobre o funcionamento interno: quais ferramentas foram selecionadas na busca semântica, quais chamadas de ferramenta foram feitas e com quais argumentos.
-
-Isso permite ver se a descrição de uma ferramenta está atraindo os prompts certos:
+Para conectar seu servidor a um host como o Claude Desktop, adicione ao arquivo `claude_desktop_config.json`:
 
 ```json
 {
-  "type": "user",
-  "tool_use_result": {
-    "matches": [
-      "mcp__oblique__GetUser",
-      "mcp__oblique__SearchUsers"
-    ],
-    "query": "select:mcp__oblique__GetUser,mcp__oblique__SearchUsers"
+  "mcpServers": {
+    "greeter": {
+      "command": "/caminho/para/greeter"
+    }
   }
 }
 ```
 
-### Sistema de evals automatizado
-
-O script bash evoluiu para um programa Go de ~300 linhas que:
-
-- Consome uma biblioteca de prompts
-- Chama o Claude Code em paralelo para cada prompt
-- Parseia o output com `json.Decoder` em modo streaming
-- Produz um relatório por prompt com ferramentas carregadas, chamadas realizadas e erros
-
-O resultado de um prompt bem-sucedido:
-
-```yaml
-- prompt: What teams am I on?
-  tool_calls:
-    - name: mcp__oblique__SearchTeamMembers
-      input: '{"parent":"teams/-","filter":"member=\"users/me\""}'
-    - name: mcp__oblique__BatchGetTeams
-      input: '{"names":["teams/engineering","teams/puzzle-box"]}'
-  tool_errors: []
-  result: |-
-    You're on 3 teams:
-    - Engineering
-    - Spanish conversation group
-    - Puzzle Box
-```
-
-Quando chega um bug report, eles adicionam um prompt à biblioteca de evals e rodam o sistema. Em minutos conseguem ver onde o modelo está travando.
-
----
+O host inicia o processo, descobre as tools via handshake MCP e as disponibiliza ao LLM. A partir daí, quando você perguntar algo que exija cumprimentar alguém, o modelo saberá que tem a tool `greet` disponível.
 
 ## Armadilhas comuns
 
-**Comentários são a parte mais crítica.** Eles descobriram que descrições escritas por humanos superam qualquer coisa gerada automaticamente na capacidade de direcionar o modelo. Se o modelo consegue gerar um comentário, provavelmente já tem a informação de qualquer forma. O valor está em comentários que um desenvolvedor humano escreveria: contexto, intenção, exemplos de valores válidos.
+**Descrições ruins quebram a descoberta.** O LLM usa a `Description` da tool para decidir quando chamá-la. Uma descrição vaga como "executa ação" é inútil. Escreva o que a tool faz, em que contexto usar e o que ela retorna.
 
-**Enum sem valores documentados quebra.** Se você tem um campo enum, não basta comentar o campo. Os valores individuais precisam de descrição para o modelo saber o que usar.
+**Retornar erros dentro do resultado, não fora.** Em MCP, a distinção é importante: um erro Go (`error`) indica falha de protocolo. Um erro de negócio (arquivo não encontrado, permissão negada) deve ser retornado via `IsError: true` no `CallToolResult`. O SDK cuida disso automaticamente quando você retorna um `error` do handler.
 
-**O schema de output importa tanto quanto o de input.** Definir `outputSchema` ajuda o modelo a interpretar a resposta corretamente e a construir chamadas de ferramentas em cadeia.
+**Não confundir servidor MCP com o LLM.** O servidor MCP é um processo comum em Go. Ele não tem inteligência. Ele apenas expõe capacidades que o LLM decide quando usar.
 
-**Acoplamento REST-MCP tem prós e contras.** Manter os dois acoplados garante que mudanças na API chegam ao MCP, mas requer lógica condicional para campos que não fazem sentido no contexto de um agente.
-
----
+**Stdio bloqueia até o cliente desconectar.** O `server.Run` com `StdioTransport` bloqueia a goroutine principal. Para servidores que precisam fazer outras coisas, use goroutines separadas.
 
 ## Resumo
 
-- MCP se tornou o protocolo padrão para agentes externos; manter as descrições de ferramentas precisas é o desafio central
-- Gerar o servidor MCP a partir do Protobuf elimina drift entre a API e as descrições das ferramentas
-- Comentários Protobuf não estão disponíveis nos arquivos `.pb.go` gerados; a solução é embutir um descriptor file e usar `protodesc` + `protoreflect`
-- Filtrar campos de output por relevância reduz o consumo de tokens e melhora o foco do modelo
-- Um sistema de evals automatizado com Claude Code no modo `stream-json` é essencial para depurar comportamento de agentes em escala
-
----
+- MCP é um protocolo aberto para conectar LLMs a ferramentas e dados externos de forma padronizada
+- Um servidor MCP expõe três primitivos: tools (ações), resources (dados) e prompts (templates)
+- O SDK oficial de Go (`github.com/modelcontextprotocol/go-sdk`) infere schemas JSON a partir de structs Go usando generics e struct tags
+- O transporte `stdio` é o mais simples para uso local; para uso remoto existe HTTP/SSE
+- Descrições de tools bem escritas são essenciais para que o LLM saiba quando e como usá-las
 
 ## Próximos passos
 
-- [Go MCP SDK](https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk/mcp) - SDK oficial para Go
-- [protoreflect](https://pkg.go.dev/google.golang.org/protobuf/reflect/protoreflect) - API de reflexão do Protobuf em Go
-- [protodesc](https://pkg.go.dev/google.golang.org/protobuf/reflect/protodesc) - Conversão de FileDescriptorSet para tipos de reflexão
-- [buf descriptors](https://buf.build/docs/reference/descriptors/) - Referência sobre descriptor files no ecossistema Buf
-- [Claude Code headless mode](https://code.claude.com/docs/en/headless) - Documentação do modo programático do Claude Code
-
----
+- [Go MCP SDK - Quick Start](https://go.sdk.modelcontextprotocol.io/quick_start/) - documentação oficial
+- [Referência do pacote mcp](https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk/mcp) - API completa
+- [Exemplos do repositório oficial](https://github.com/modelcontextprotocol/go-sdk/tree/main/examples) - servidores e clientes de exemplo
+- [Especificação MCP](https://modelcontextprotocol.io/specification/2025-06-18) - detalhes do protocolo
+- [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) - ferramenta para inspecionar e debugar servidores MCP
 
 ## Referências
 
-- [Generating an MCP server in Go - Oblique Security](https://oblique.security/blog/mcp/)
-- [Type-safe frontend APIs - Oblique Security](https://oblique.security/blog/type-safe-frontend-apis/)
-- [Go MCP SDK - pkg.go.dev](https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk/mcp)
-- [protoreflect - pkg.go.dev](https://pkg.go.dev/google.golang.org/protobuf/reflect/protoreflect)
+- [Go MCP SDK - Official Repository](https://github.com/modelcontextprotocol/go-sdk)
+- [Go MCP SDK - Quick Start](https://go.sdk.modelcontextprotocol.io/quick_start/)
+- [Go MCP SDK - Server Features](https://go.sdk.modelcontextprotocol.io/server/)
+- [Building a Model Context Protocol Server in Go - Navendu Pottekkat](https://navendu.me/posts/mcp-server-go/)
+- [Model Context Protocol - Introduction](https://modelcontextprotocol.io/introduction)
