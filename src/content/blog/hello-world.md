@@ -2,7 +2,7 @@
 title: Olá, mundo
 date: 2026-05-23
 description: O primeiro post deste blog — uma nota curta sobre por que decidi começar a escrever aqui.
-tags: [blog]
+tags: [blog, tech]
 ---
 
 Este é o primeiro post do blog. A ideia é usar este espaço para registrar notas curtas sobre engenharia de software, sistemas distribuídos e o que tenho aprendido construindo produtos com IA.
