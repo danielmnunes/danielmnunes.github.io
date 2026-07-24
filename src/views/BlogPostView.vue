@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router'
 import { usePosts } from '@/composables/usePosts'
 import { renderMarkdown } from '@/utils/markdown'
 
 const props = defineProps<{ slug: string }>()
 
-const { getPost } = usePosts()
+const { getPost, getAdjacentPosts } = usePosts()
+
+const adjacent = computed(() => getAdjacentPosts(props.slug))
 
 const post = ref(getPost(props.slug))
 const html = ref('')
@@ -46,7 +48,33 @@ watchEffect(async () => {
         </header>
 
         <p v-if="loading" class="loading">Carregando…</p>
-        <article v-else class="post-content" lang="pt-BR" v-html="html"></article>
+        <template v-else>
+          <article class="post-content" lang="pt-BR" v-html="html"></article>
+
+          <nav
+            v-if="adjacent.prev || adjacent.next"
+            class="post-nav"
+            aria-label="Navegação entre posts"
+          >
+            <RouterLink
+              v-if="adjacent.prev"
+              :to="`/blog/${adjacent.prev.slug}`"
+              class="post-nav-link prev"
+            >
+              <span class="post-nav-label">← Post anterior</span>
+              <span class="post-nav-title">{{ adjacent.prev.title }}</span>
+            </RouterLink>
+
+            <RouterLink
+              v-if="adjacent.next"
+              :to="`/blog/${adjacent.next.slug}`"
+              class="post-nav-link next"
+            >
+              <span class="post-nav-label">Próximo post →</span>
+              <span class="post-nav-title">{{ adjacent.next.title }}</span>
+            </RouterLink>
+          </nav>
+        </template>
       </template>
 
       <div v-else class="not-found">
@@ -247,5 +275,62 @@ html.dark .post-content :deep(.shiki span) {
 .post-content :deep(tbody tr:nth-child(even)) {
   background-color: var(--alt-bg);
   opacity: 0.5;
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--alt-bg);
+}
+
+.post-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--alt-bg);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.post-nav-link:hover {
+  border-color: var(--link);
+  background-color: var(--alt-bg);
+  text-decoration: none;
+}
+
+.post-nav-link.next {
+  grid-column: 2;
+  text-align: right;
+}
+
+.post-nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--link);
+}
+
+.post-nav-title {
+  font-weight: 600;
+  color: var(--alt-fg);
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .post-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .post-nav-link.next {
+    grid-column: 1;
+    text-align: left;
+  }
 }
 </style>

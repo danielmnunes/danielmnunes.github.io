@@ -45,12 +45,31 @@ const allPosts: Post[] = Object.entries(rawModules)
   .filter((post): post is Post => post !== null)
   .sort((a, b) => (a.date < b.date ? 1 : -1))
 
+export interface AdjacentPosts {
+  prev: PostMeta | null
+  next: PostMeta | null
+}
+
+function toMeta({ body: _body, ...meta }: Post): PostMeta {
+  return meta
+}
+
 export function usePosts() {
-  const posts: PostMeta[] = allPosts.map(({ body: _body, ...meta }) => meta)
+  const posts: PostMeta[] = allPosts.map(toMeta)
 
   function getPost(slug: string): Post | null {
     return allPosts.find((post) => post.slug === slug) ?? null
   }
 
-  return { posts, getPost }
+  function getAdjacentPosts(slug: string): AdjacentPosts {
+    const index = allPosts.findIndex((post) => post.slug === slug)
+    if (index === -1) return { prev: null, next: null }
+
+    const prev = index < allPosts.length - 1 ? toMeta(allPosts[index + 1]!) : null
+    const next = index > 0 ? toMeta(allPosts[index - 1]!) : null
+
+    return { prev, next }
+  }
+
+  return { posts, getPost, getAdjacentPosts }
 }
