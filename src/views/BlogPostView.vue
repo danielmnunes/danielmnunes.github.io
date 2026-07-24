@@ -6,6 +6,8 @@ import { renderMarkdown } from '@/utils/markdown'
 
 const props = defineProps<{ slug: string }>()
 
+const SITE_NAME = 'Daniel Nunes'
+
 const { getPost, getAdjacentPosts } = usePosts()
 
 const adjacent = computed(() => getAdjacentPosts(props.slug))
@@ -15,6 +17,13 @@ const html = ref('')
 const loading = ref(false)
 
 const dateFormatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' })
+
+watchEffect(() => {
+  const current = getPost(props.slug)
+  document.title = current
+    ? `${current.title} — ${SITE_NAME}`
+    : `Post não encontrado — ${SITE_NAME}`
+})
 
 watchEffect(async () => {
   post.value = getPost(props.slug)
