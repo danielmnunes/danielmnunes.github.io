@@ -74,6 +74,7 @@ src/
 │   └── usePosts.ts
 ├── utils/
 │   ├── frontmatter.ts
+│   ├── formatPostDate.ts
 │   └── markdown.ts
 ├── components/
 │   ├── AppHeader.vue
@@ -126,7 +127,7 @@ tags: [tag1, tag2]
 
 O parser é deliberadamente simples (não é YAML completo): só `title`, `date`, `description` e `tags` em array inline `[a, b]`.
 
-**Datas na UI:** `BlogIndexView` e `BlogPostView` usam `Intl.DateTimeFormat` com `timeZone: 'UTC'` para não exibir o dia anterior em fusos negativos.
+**Datas na UI:** `formatPostDate` em `src/utils/formatPostDate.ts` (`Intl` + `timeZone: 'UTC'`). Usado por `BlogIndexView` e `BlogPostView`.
 
 Linguagens Shiki suportadas: `ts`, `js`, `vue`, `bash`, `json`, `md`, `java`, `go`, `proto`, `yaml`. Outras caem em fallback escapado (`html: false` no markdown-it — sem HTML cru nos posts).
 

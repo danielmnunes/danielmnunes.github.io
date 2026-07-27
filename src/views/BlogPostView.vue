@@ -2,6 +2,7 @@
 import { computed, ref, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router'
 import { usePosts } from '@/composables/usePosts'
+import { formatPostDate } from '@/utils/formatPostDate'
 import { renderMarkdown } from '@/utils/markdown'
 
 const props = defineProps<{ slug: string }>()
@@ -15,13 +16,6 @@ const adjacent = computed(() => getAdjacentPosts(props.slug))
 const post = ref(getPost(props.slug))
 const html = ref('')
 const loading = ref(false)
-
-// timeZone UTC: a data do frontmatter é meia-noite UTC; sem isto, fusos negativos
-// exibiriam o dia anterior.
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  dateStyle: 'long',
-  timeZone: 'UTC',
-})
 
 watchEffect(() => {
   const current = getPost(props.slug)
@@ -55,7 +49,7 @@ watchEffect(async () => {
       <template v-if="post">
         <header class="post-header">
           <h1>{{ post.title }}</h1>
-          <time :datetime="post.date">{{ dateFormatter.format(new Date(post.date)) }}</time>
+          <time :datetime="post.date">{{ formatPostDate(post.date) }}</time>
           <ul v-if="post.tags.length" class="tags" aria-label="Tags">
             <li v-for="tag in post.tags" :key="tag" class="tag">#{{ tag }}</li>
           </ul>

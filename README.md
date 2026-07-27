@@ -55,6 +55,7 @@ src/
 │   └── usePosts.ts         # loads Markdown posts at build time
 ├── utils/
 │   ├── frontmatter.ts      # simple YAML frontmatter parser
+│   ├── formatPostDate.ts   # UTC-safe calendar date display
 │   └── markdown.ts         # markdown-it + Shiki highlighting
 ├── components/
 │   ├── AppHeader.vue

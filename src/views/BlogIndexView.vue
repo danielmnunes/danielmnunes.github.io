@@ -2,20 +2,14 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { usePosts } from '@/composables/usePosts'
+import { formatPostDate } from '@/utils/formatPostDate'
 
 const { posts } = usePosts()
-
-// timeZone UTC: a data do frontmatter é meia-noite UTC; sem isto, fusos negativos
-// exibiriam o dia anterior.
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  dateStyle: 'long',
-  timeZone: 'UTC',
-})
 
 const items = computed(() =>
   posts.map((post) => ({
     ...post,
-    formattedDate: dateFormatter.format(new Date(post.date)),
+    formattedDate: formatPostDate(post.date),
   })),
 )
 </script>
