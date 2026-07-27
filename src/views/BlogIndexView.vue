@@ -5,7 +5,12 @@ import { usePosts } from '@/composables/usePosts'
 
 const { posts } = usePosts()
 
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' })
+// timeZone UTC: a data do frontmatter é meia-noite UTC; sem isto, fusos negativos
+// exibiriam o dia anterior.
+const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+})
 
 const items = computed(() =>
   posts.map((post) => ({

@@ -16,7 +16,12 @@ const post = ref(getPost(props.slug))
 const html = ref('')
 const loading = ref(false)
 
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' })
+// timeZone UTC: a data do frontmatter é meia-noite UTC; sem isto, fusos negativos
+// exibiriam o dia anterior.
+const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+})
 
 watchEffect(() => {
   const current = getPost(props.slug)
