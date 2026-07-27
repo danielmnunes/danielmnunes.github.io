@@ -19,10 +19,15 @@ const rawModules = import.meta.glob('@/content/blog/*.md', {
 }) as Record<string, string>
 
 const SLUG_RE = /\/([^/]+)\.md$/
+// Convenção reservada: slug.<locale>.md (ex.: hello-world.en.md) é rascunho/variante.
+// Ignorada até haver resolução de locale no blog — evita slug "hello-world.en" na lista.
+const LOCALE_VARIANT_RE = /\.(pt|en)$/
 
 function slugFromPath(path: string): string | null {
   const match = path.match(SLUG_RE)
-  return match?.[1] ?? null
+  const slug = match?.[1] ?? null
+  if (!slug || LOCALE_VARIANT_RE.test(slug)) return null
+  return slug
 }
 
 const allPosts: Post[] = Object.entries(rawModules)
